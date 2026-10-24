@@ -1,4 +1,5 @@
-import { bubbleDuration, type Trigger } from './performance';
+import type { Trigger } from './performance';
+import { PianoEffects } from './effects';
 import { HANDS, noteName, scoreEnd, type Hand, type Score } from './score/types';
 
 const svgNS='http://www.w3.org/2000/svg';
@@ -8,7 +9,7 @@ function el(name:string, attrs:Record<string,string|number>={}, text?:string): S
   if(text!==undefined)e.textContent=text;
   return e;
 }
-const line=(x1:number,y1:number,x2:number,y2:number,color='#9eaaa9')=>el('line',{x1,y1,x2,y2,stroke:color,'stroke-width':0.8});
+const line=(x1:number,y1:number,x2:number,y2:number,color='#51485e')=>el('line',{x1,y1,x2,y2,stroke:color,'stroke-width':0.8});
 const black=(midi:number)=>[1,3,6,8,10].includes(midi%12);
 
 export class ScoreView {
@@ -39,12 +40,12 @@ export class ScoreView {
     const width=Math.max(620,this.host.clientWidth*236/(this.host.clientHeight||236));
     const svg=el('svg',{viewBox:`0 0 ${width} 236`,role:'group','aria-label':'左右手五线谱，可点击小节定位'}) as SVGSVGElement;
     const defs=el('defs'),clip=el('clipPath',{id:'score-clip'});clip.append(el('rect',{x:110,y:0,width:width-110,height:236}));defs.append(clip);svg.append(defs);
-    for(const base of [54,154])for(let n=0;n<5;n++)svg.append(line(0,base+n*10,width,base+n*10,'#bdc5c1'));
+    for(const base of [54,154])for(let n=0;n<5;n++)svg.append(line(0,base+n*10,width,base+n*10,'#4b4357'));
     const clipped=el('g',{'clip-path':'url(#score-clip)'}),group=el('g',{transform:`translate(${-this.offset},0)`});clipped.append(group);svg.append(clipped);
     for(let b=from;b<=Math.min(scoreEnd(score)+meter,from+48);b+=meter) {
       const x=150+b*76;
-      group.append(line(x,54,x,194,'#9faeaa'));
-      group.append(el('text',{x:x+7,y:27,fill:'#758780','font-size':11,'font-family':'Consolas, monospace'},String(Math.floor(b/meter)+1).padStart(2,'0')));
+      group.append(line(x,54,x,194,'#5b506b'));
+      if(b<scoreEnd(score))group.append(el('text',{x:x+7,y:27,fill:'#a599b3','font-size':11,'font-family':'Consolas, monospace'},String(Math.floor(b/meter)+1).padStart(2,'0')));
       const hit=el('rect',{x,y:30,width:meter*76,height:180,fill:'transparent',class:'measure-hit',tabindex:0,role:'button','aria-label':`定位到第 ${Math.floor(b/meter)+1} 小节`});
       hit.addEventListener('click',()=>this.onSeek?.(b));hit.addEventListener('keydown',e=>{const k=e as KeyboardEvent;if(k.key==='Enter'){k.preventDefault();this.onSeek?.(b);}});if(b<scoreEnd(score))group.append(hit);
     }
@@ -55,7 +56,7 @@ export class ScoreView {
       for(const event of score.hands[hand]) {
         if(event.beat>occupiedUntil+0.01) {
           const gap=event.beat-occupiedUntil;
-          if(occupiedUntil>=from-1 && occupiedUntil<=from+48)group.append(el('text',{x:172+occupiedUntil*76,y:base+30,'font-family':'"Segoe UI Symbol",serif','font-size':28,fill:'#617a75'},gap>=4?'𝄻':gap>=2?'𝄼':gap>=1?'𝄽':'𝄾'));
+          if(occupiedUntil>=from-1 && occupiedUntil<=from+48)group.append(el('text',{x:172+occupiedUntil*76,y:base+30,'font-family':'"Segoe UI Symbol",serif','font-size':28,fill:'#ab9ebc'},gap>=4?'𝄻':gap>=2?'𝄼':gap>=1?'𝄽':'𝄾'));
         }
         occupiedUntil=Math.max(occupiedUntil,event.beat+Math.max(...event.notes.map(n=>n.beats)));
       }
@@ -63,7 +64,7 @@ export class ScoreView {
         if(event.beat<from-1 || event.beat>from+48)return;
         const x=172+event.beat*76;
         const isNext=index===this.indices[hand],past=index<this.indices[hand];
-        const color=isNext?'#087dba':past?'#7a9695':'#243a3c';
+        const color=isNext?'#e3bdff':past?'#756687':'#e4dfed';
         const g=el('g',{'data-hand':hand,'data-index':index,class:isNext?'score-note next':'score-note',fill:color});
         let minY=Infinity,maxY=-Infinity;
         const pitches=event.notes.map(n=>{
@@ -76,7 +77,7 @@ export class ScoreView {
           minY=Math.min(minY,y);maxY=Math.max(maxY,y);
           for(let ly=base-10;ly>=y-1;ly-=10)g.append(line(x-10,ly,x+10,ly,color));
           for(let ly=base+50;ly<=y+1;ly+=10)g.append(line(x-10,ly,x+10,ly,color));
-          g.append(el('ellipse',{cx:x,cy:y,rx:7,ry:4.7,transform:`rotate(-18 ${x} ${y})`,fill:n.beats>=2?'#f0f2e9':color,stroke:color,'stroke-width':1.7}));
+          g.append(el('ellipse',{cx:x,cy:y,rx:7,ry:4.7,transform:`rotate(-18 ${x} ${y})`,fill:n.beats>=2?'#111016':color,stroke:color,'stroke-width':1.7}));
           if(accidental)g.append(el('text',{x:x-23,y:y+5,'font-size':19},accidental==='#'?'♯':'♭'));
           const dotted=[0.1875,0.375,0.75,1.5,3,6].some(v=>Math.abs(n.beats-v)<0.001);
           if(dotted)g.append(el('circle',{cx:x+14,cy:y-2,r:1.8}));
@@ -90,18 +91,18 @@ export class ScoreView {
           if(duration<1)for(let flag=0;flag<Math.min(3,Math.max(1,Math.round(Math.log2(1/duration))));flag++)g.append(el('path',{d:`M ${x+6} ${minY-30+flag*7} q 16 8 6 21 q 4 -11 -6 -14`,fill:color}));
         }
         if(isNext) {
-          g.append(el('line',{x1:x,y1:base-19,x2:x,y2:base+57,stroke:'#168fc8','stroke-width':1,opacity:0.45}));
-          g.append(el('circle',{cx:x,cy:base-22,r:3,fill:'#168fc8'}));
+          g.append(el('line',{x1:x,y1:base-19,x2:x,y2:base+57,stroke:'#d5a2ff','stroke-width':1,opacity:0.55}));
+          g.append(el('circle',{cx:x,cy:base-22,r:3,fill:'#dfb6ff'}));
         }
         group.append(g);
       });
     }
     // Fixed clefs and meter mask the scrolling staff.
-    svg.append(el('rect',{x:0,y:29,width:110,height:190,fill:'#f0f2e9'}));
-    for(const base of [54,154])for(let n=0;n<5;n++)svg.append(line(0,base+n*10,110,base+n*10,'#bdc5c1'));
-    svg.append(el('text',{x:21,y:96,'font-size':65,'font-family':'"Segoe UI Symbol", serif',fill:'#243a3c'},'𝄞'));
-    svg.append(el('text',{x:25,y:191,'font-size':51,'font-family':'"Segoe UI Symbol", serif',fill:'#243a3c'},'𝄢'));
-    for(const y of [72,172]) {svg.append(el('text',{x:84,y,'font-size':20,'font-family':'Georgia',fill:'#243a3c'},String(score.timeSignature[0])));svg.append(el('text',{x:84,y:y+20,'font-size':20,'font-family':'Georgia',fill:'#243a3c'},String(score.timeSignature[1])));}
+    svg.append(el('rect',{x:0,y:29,width:110,height:190,fill:'#111016'}));
+    for(const base of [54,154])for(let n=0;n<5;n++)svg.append(line(0,base+n*10,110,base+n*10,'#4b4357'));
+    svg.append(el('text',{x:21,y:96,'font-size':65,'font-family':'"Segoe UI Symbol", serif',fill:'#d5cede'},'𝄞'));
+    svg.append(el('text',{x:25,y:191,'font-size':51,'font-family':'"Segoe UI Symbol", serif',fill:'#d5cede'},'𝄢'));
+    for(const y of [72,172]) {svg.append(el('text',{x:84,y,'font-size':20,'font-family':'Georgia',fill:'#d5cede'},String(score.timeSignature[0])));svg.append(el('text',{x:84,y:y+20,'font-size':20,'font-family':'Georgia',fill:'#d5cede'},String(score.timeSignature[1])));}
     this.host.replaceChildren(svg);this.group=group;
   }
 }
@@ -110,9 +111,10 @@ export class KeyboardView {
   private keys=new Map<number,HTMLButtonElement>();
   private positions=new Map<number,number>();
   private activeUntil=new Map<number,number>();
-  private particles=new Set<HTMLElement>();
+  private effects:PianoEffects;
   onPress?:(hand:Hand)=>void;
-  constructor(private host:HTMLElement,private bubbles:HTMLElement) {
+  constructor(private host:HTMLElement,canvas:HTMLCanvasElement) {
+    this.effects=new PianoEffects(canvas);
     const whites=Array.from({length:88},(_,i)=>i+21).filter(n=>!black(n));
     let whiteIndex=0;
     for(let midi=21;midi<=108;midi++) {
@@ -132,16 +134,10 @@ export class KeyboardView {
     for(const n of trigger.event.notes) {
       this.activeUntil.set(n.midi,Math.max(now+n.beats*60000/bpm,this.activeUntil.get(n.midi)??0));
       this.keys.get(n.midi)?.classList.add('pressed');
-      const b=document.createElement('span');b.className=`bubble ${trigger.hand}`;
-      b.style.left=`${this.positions.get(n.midi)??50}%`;
-      b.style.setProperty('--flight',`${bubbleDuration(n.beats,bpm)}s`);
-      b.style.setProperty('--sway',`${(n.midi%5-2)*12}px`);
-      b.style.setProperty('--size',`${14+Math.min(12,n.beats*4)}px`);
-      b.addEventListener('animationend',()=>{b.remove();this.particles.delete(b);},{once:true});
-      this.bubbles.append(b);this.particles.add(b);
-      if(this.particles.size>250){const old=this.particles.values().next().value;old?.remove();if(old)this.particles.delete(old);}
+      this.effects.emit({x:(this.positions.get(n.midi)??50)/100,beats:n.beats,midi:n.midi,hand:trigger.hand},bpm,now);
     }
   }
-  frame(now:number) {for(const [midi,until]of this.activeUntil)if(now>=until){this.keys.get(midi)?.classList.remove('pressed');this.activeUntil.delete(midi);}}
-  clear() {for(const p of this.particles)p.remove();this.particles.clear();for(const key of this.keys.values())key.classList.remove('pressed');this.activeUntil.clear();}
+  frame(now:number) {for(const [midi,until]of this.activeUntil)if(now>=until){this.keys.get(midi)?.classList.remove('pressed');this.activeUntil.delete(midi);}this.effects.frame(now);}
+  clear() {this.effects.clear();for(const key of this.keys.values())key.classList.remove('pressed');this.activeUntil.clear();}
+  dispose() {this.clear();this.effects.dispose();}
 }
