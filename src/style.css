@@ -11,3 +11,5 @@
 @media(max-width:900px){.bubbles{left:18px;right:18px}}
 @media(max-height:850px){.header{height:64px}.toolbar{padding-top:12px;padding-bottom:12px}.score-heading{padding-top:16px}.piece-title{font-size:24px;margin-bottom:5px}.score-host{height:174px}.score-foot{height:28px}.piano{height:110px}.piano-rail{height:26px}.footer{min-height:32px}.hand-state{top:14px}.key-guide{top:78px}}
 @media(max-height:650px){.header{height:52px}.toolbar{padding-top:9px;padding-bottom:9px}.score-heading{padding-top:10px}.piece-title{font-size:20px;margin-bottom:3px}.composer{font-size:10px}.score-host{height:130px}.score-foot{height:24px}.piano{height:88px}.piano-rail{height:22px}.footer{min-height:26px}.stage{margin-top:6px}.hand-state{top:8px}.hand-label small{margin-top:2px}.key-guide{display:none}}
+@media(max-width:600px){.piano,.piano-rail{min-width:0}.piano-section{overflow:visible}.piano-key span{font-size:7px}.piano-rail{font-size:8px;letter-spacing:.7px}}
+@media(max-width:600px) and (max-height:650px){.hand-label small .notes{display:none}}

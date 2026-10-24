@@ -46,7 +46,7 @@ export class ScoreView {
       group.append(line(x,54,x,194,'#9faeaa'));
       group.append(el('text',{x:x+7,y:27,fill:'#758780','font-size':11,'font-family':'Consolas, monospace'},String(Math.floor(b/meter)+1).padStart(2,'0')));
       const hit=el('rect',{x,y:30,width:meter*76,height:180,fill:'transparent',class:'measure-hit',tabindex:0,role:'button','aria-label':`定位到第 ${Math.floor(b/meter)+1} 小节`});
-      hit.addEventListener('click',()=>this.onSeek?.(b));hit.addEventListener('keydown',e=>{const k=e as KeyboardEvent;if(k.key==='Enter'){k.preventDefault();this.onSeek?.(b);}});group.append(hit);
+      hit.addEventListener('click',()=>this.onSeek?.(b));hit.addEventListener('keydown',e=>{const k=e as KeyboardEvent;if(k.key==='Enter'){k.preventDefault();this.onSeek?.(b);}});if(b<scoreEnd(score))group.append(hit);
     }
     for(const hand of HANDS) {
       const base=hand==='right'?54:154;
