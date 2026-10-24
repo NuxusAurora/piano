@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "title": "时值与和弦练习",
+  "composer": "随奏 · 导入示例",
+  "bpm": 120,
+  "timeSignature": [4, 4],
+  "hands": {
+    "left": [
+      { "beat": 0, "notes": [{ "midi": 48, "beats": 2 }, { "midi": 52, "beats": 2 }, { "midi": 55, "beats": 2 }] },
+      { "beat": 2, "notes": [{ "midi": 53, "beats": 2 }, { "midi": 57, "beats": 2 }, { "midi": 60, "beats": 2 }] },
+      { "beat": 4, "notes": [{ "midi": 48, "beats": 4 }, { "midi": 55, "beats": 4 }] }
+    ],
+    "right": [
+      { "beat": 0, "notes": [{ "midi": 72, "beats": 0.5 }] },
+      { "beat": 0.5, "notes": [{ "midi": 74, "beats": 0.5 }] },
+      { "beat": 1, "notes": [{ "midi": 76, "beats": 1 }] },
+      { "beat": 2, "notes": [{ "midi": 72, "beats": 2 }, { "midi": 76, "beats": 2 }, { "midi": 79, "beats": 2 }] },
+      { "beat": 4, "notes": [{ "midi": 72, "beats": 4 }] }
+    ]
+  }
+}
