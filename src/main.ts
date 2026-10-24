@@ -68,21 +68,25 @@ let score:Score=demoScore(), engine=new Performance(score), bpm=score.bpm;
 let active=false,demo=false,metronome=false,beatShown=0,startToken=0,importToken=0;
 let demoOrigin=0,demoBase=0,metroNext=0,metroCount=0,toastTimer:ReturnType<typeof setTimeout>;
 let importedScore:Score|undefined;
+let uiDirty=true,totalGroups=0,totalMeasures=0;
 const audio=new PianoAudio(), scoreView=new ScoreView($('score')), keyboard=new KeyboardView($('piano'),$<HTMLCanvasElement>('note-effects'));
 audio.onStatus=s=>$('sound-status').textContent=s;
 
 function toast(text:string) {clearTimeout(toastTimer);$('toast').textContent=text;$('toast').hidden=false;toastTimer=setTimeout(()=>$('toast').hidden=true,6500);}
-function update() {
+function update() {uiDirty=true;}
+function renderUI() {
+  uiDirty=false;
   const indices=engine.snapshot();
-  const total=score.hands.left.length+score.hands.right.length,done=indices.left+indices.right;
+  const total=totalGroups,done=indices.left+indices.right;
   for(const hand of HANDS) {
     $(`${hand}-count`).textContent=`${indices[hand]} / ${score.hands[hand].length}`;
     $(`${hand}-notes`).textContent=engine.next(hand)?.notes.map(n=>noteName(n.midi)).join(' · ')??'完成';
   }
   $('progress-label').textContent=`${done} / ${total}`;$('progress').style.width=`${done/total*100}%`;
   const meter=score.timeSignature[0]*4/score.timeSignature[1];
-  $('measure').textContent=`${String(Math.floor(beatShown/meter)+1).padStart(2,'0')} / ${String(Math.ceil(scoreEnd(score)/meter)).padStart(2,'0')}`;
-  $('toggle').innerHTML=`${icon(active?'pause':'play')}<span>${active?'暂停':engine.complete?'再弹一次':'开始演奏'}</span>`;
+  $('measure').textContent=`${String(Math.floor(beatShown/meter)+1).padStart(2,'0')} / ${String(totalMeasures).padStart(2,'0')}`;
+  const label=active?'暂停':engine.complete?'再弹一次':'开始演奏';
+  if($('toggle').dataset.state!==label){$('toggle').innerHTML=`${icon(active?'pause':'play')}<span>${label}</span>`;$('toggle').dataset.state=label;}
   $('demo').setAttribute('aria-pressed',String(demo));$('demo').textContent=demo?'停止试听':'试听';
   $('status').textContent=engine.complete?'演奏完成':demo?'正在试听':active?'跟随节奏演奏':done?'已暂停':'等待演奏';
   $('status-dot').classList.toggle('playing',active);$('guide').classList.toggle('hidden',active);
@@ -103,6 +107,8 @@ async function start(asDemo=false) {
 }
 function setScore(next:Score) {
   pause();score=next;engine=new Performance(score);bpm=score.bpm;beatShown=0;
+  totalGroups=score.hands.left.length+score.hands.right.length;
+  totalMeasures=Math.ceil(scoreEnd(score)/(score.timeSignature[0]*4/score.timeSignature[1]));
   $('title').textContent=score.title;$('composer').textContent=score.composer||'自定义曲谱';
   $<HTMLInputElement>('bpm').value=String(Math.round(bpm));$('meter').textContent=score.timeSignature.join(' / ');
   scoreView.load(score);update();
@@ -169,7 +175,7 @@ window.addEventListener('keydown',e=>{
   if(handForCode(e.code)) {e.preventDefault();if(active&&!demo)play(engine.press(e.code,e.repeat));}
 });
 window.addEventListener('keyup',e=>engine.release(e.code));
-window.addEventListener('resize',()=>scoreView.update(engine.snapshot()));
+window.addEventListener('resize',()=>scoreView.resize());
 window.addEventListener('blur',()=>{if(active)pause();else engine.clearInput();});
 document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();});
 let dragDepth=0;
@@ -191,6 +197,7 @@ function frame(now:number) {
     audio.click(metroCount%score.timeSignature[0]===0);metroCount++;
     metroNext+=60000/bpm*4/score.timeSignature[1];if(now-metroNext>100)metroNext=now+60000/bpm*4/score.timeSignature[1];
   }
+  if(uiDirty)renderUI();
   keyboard.frame(now);scoreView.frame();frameId=requestAnimationFrame(frame);
 }
 setScore(score);
