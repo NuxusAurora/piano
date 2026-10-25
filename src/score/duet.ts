@@ -1,4 +1,5 @@
 import { HANDS, type Hand, type Score, type ScoreEvent, type ScoreGesture, type PerformanceScore } from './types';
+import { beatGestures } from './beat';
 
 // Merge both original staves into complete gestures without mutating the source.
 function mergedOnsets(score: Score): ScoreEvent[] {
@@ -37,11 +38,14 @@ export function fullSong(score: Score): ScoreGesture[] {
   return gestures;
 }
 
-export function duetScore(left: Score, right: Score): PerformanceScore {
+export function duetScore(left: Score, right: Score, byBeat = false): PerformanceScore {
   return {
     version: 1, title: '双曲独奏', composer: '', bpm: left.bpm,
     timeSignature: [...left.timeSignature],
-    hands: { left: fullSong(left), right: fullSong(right) },
+    hands: {
+      left: byBeat ? beatGestures(mergedOnsets(left), 4 / left.timeSignature[1]) : fullSong(left),
+      right: byBeat ? beatGestures(mergedOnsets(right), 4 / right.timeSignature[1]) : fullSong(right),
+    },
   };
 }
 
