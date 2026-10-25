@@ -3,7 +3,7 @@ import { unzipSync, strFromU8 } from 'fflate';
 import * as MidiModule from '@tonejs/midi';
 // Node loads the package's UMD main; Vite resolves its ESM module.
 const Midi = MidiModule.Midi ?? (MidiModule as unknown as { default: typeof MidiModule }).default.Midi;
-import { validateScore, type Score, type ScoreEvent, type Hand, type Pitch } from './types';
+import { validateScore, type Score, type ScoreEvent, type Hand, type Pitch, type TimeSignature, type MeterChange } from './types';
 
 type XNode = Record<string, unknown>;
 const tag = (n: XNode): string => Object.keys(n).find(k => k !== ':@') ?? '';
@@ -35,6 +35,8 @@ export function parseMusicXML(xml: string): Imported {
   let bpm = 90, tempoFound = false;
   let timeSignature: [number,number] = [4,4];
   let initialTime = false;
+  let pickupBeats:number|undefined;
+  const meters=new Map<number,TimeSignature>();
   const noteSteps: Record<string,number> = {C:0,D:2,E:4,F:5,G:7,A:9,B:11};
   parts.forEach((part, partIndex) => {
     let division = 1, barStart = 0, meter = 4, staffCount = 1, bass = false;
@@ -53,7 +55,9 @@ export function parseMusicXML(xml: string): Imported {
           if (time) {
             const sig: [number,number] = [number(time,'beats',4),number(time,'beat-type',4)];
             if (!initialTime) { timeSignature = sig; initialTime = true; }
-            else if (sig[0] !== timeSignature[0] || sig[1] !== timeSignature[1]) throw new Error('含变拍号，请交给 Codex 展开并转换成 piano.json');
+            const existing=meters.get(barStart);
+            if(existing&&(existing[0]!==sig[0]||existing[1]!==sig[1]))throw new Error('各声部同一位置的拍号不一致');
+            meters.set(barStart,sig);
             meter = sig[0] * 4 / sig[1];
           }
         } else if (name === 'direction') {
@@ -99,10 +103,19 @@ export function parseMusicXML(xml: string): Imported {
           if (tieTypes.includes('start')) ties.set(key,{note,end:beat+duration}); else ties.delete(key);
         }
       }
+      if(barStart===0&&attr(measure,'implicit')==='yes'&&furthest>0&&furthest<meter){
+        if(pickupBeats!==undefined&&Math.abs(pickupBeats-furthest)>1e-7)throw new Error('各声部弱起时长不一致');
+        pickupBeats=furthest;
+      }
       barStart += attr(measure,'implicit') === 'yes' ? furthest : Math.max(meter,furthest);
     }
   });
-  return {score:validateScore({version:1,title,composer,bpm,timeSignature,hands}),warnings:[...warnings]};
+  const meterChanges:MeterChange[]=[];
+  let previous=timeSignature;
+  for(const [beat,sig] of [...meters].sort((a,b)=>a[0]-b[0]))if(beat>0&&(sig[0]!==previous[0]||sig[1]!==previous[1])){
+    meterChanges.push({beat,timeSignature:sig});previous=sig;
+  }
+  return {score:validateScore({version:1,title,composer,bpm,timeSignature,...(pickupBeats!==undefined?{pickupBeats}:{}),...(meterChanges.length?{meterChanges}:{}),hands}),warnings:[...warnings]};
 }
 
 export function parseMIDI(bytes: Uint8Array, title: string): Imported {
@@ -115,8 +128,10 @@ export function parseMIDI(bytes: Uint8Array, title: string): Imported {
     const hand: Hand = tracks.length===2 ? (i===rightTrack?'right':'left') : n.midi<60?'left':'right';
     hands[hand].push({beat:n.ticks/midi.header.ppq,notes:[{midi:n.midi,beats:n.durationTicks/midi.header.ppq}]});
   }));
-  const sig = midi.header.timeSignatures[0]?.timeSignature ?? [4,4];
-  return {score:validateScore({version:1,title:midi.name||title,composer:'',bpm:midi.header.tempos[0]?.bpm??90,timeSignature:sig,hands}),warnings:['MIDI 左右手按双轨音区或中央 C 自动分配，请试听确认',...(midi.header.tempos.length>1?['当前使用首个速度']:[])]};
+  const signatures=midi.header.timeSignatures;
+  const sig = signatures[0]?.ticks===0 ? signatures[0].timeSignature : [4,4];
+  const meterChanges=signatures.filter(s=>s.ticks>0).map(s=>({beat:s.ticks/midi.header.ppq,timeSignature:s.timeSignature}));
+  return {score:validateScore({version:1,title:midi.name||title,composer:'',bpm:midi.header.tempos[0]?.bpm??90,timeSignature:sig,...(meterChanges.length?{meterChanges}:{}),hands}),warnings:['MIDI 左右手按双轨音区或中央 C 自动分配，请试听确认',...(midi.header.tempos.length>1?['当前使用首个速度']:[])]};
 }
 
 export function importBytes(name: string, bytes: Uint8Array): Imported {

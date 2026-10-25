@@ -66,3 +66,18 @@ test('separate song views own distinct clipping paths and retain independent not
   const next=walk(other).find(n=>n.attrs.get('data-hand')==='right'&&n.attrs.get('data-index')==='0');
   assert.equal(next?.attrs.get('class'),'score-note next');
 }));
+
+test('pickup and meter changes use original measure numbers, hit widths and current fixed meter',()=>withDOM(host=>{
+  const score=demoScore();score.timeSignature=[12,8];score.pickupBeats=1.5;score.meterChanges=[{beat:7.5,timeSignature:[3,4]}];
+  const view=new ScoreView(host as unknown as HTMLElement);view.load(score);
+  const hits=()=>walk(host).filter(n=>n.attrs.get('class')==='measure-hit');
+  assert.equal(hits()[0].attrs.get('aria-label'),'定位到弱起');
+  assert.equal(hits()[0].attrs.get('width'),'114');
+  assert.equal(hits().find(n=>n.attrs.get('data-beat')==='7.5')?.attrs.get('aria-label'),'定位到第 2 小节');
+  assert.equal(hits().find(n=>n.attrs.get('data-beat')==='7.5')?.attrs.get('width'),'228');
+  const root=host.children[0];view.update({left:0,right:0},7.5,true);
+  assert.equal(host.children[0],root,'changing the fixed meter should not rebuild notation');
+  assert.deepEqual(walk(host).filter(n=>n.attrs.has('data-meter')).map(n=>n.textContent),['3','4','3','4']);
+  view.update({left:0,right:0},0,true);
+  assert.deepEqual(walk(host).filter(n=>n.attrs.has('data-meter')).map(n=>n.textContent),['12','8','12','8']);
+}));

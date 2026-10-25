@@ -1,6 +1,6 @@
 # 项目规则
 
-这是 Windows 本地浏览器钢琴应用，TypeScript + Vite。用户提供图片/PDF 给 Codex 转成 `.piano.json`，软件本地读取结构化谱，也支持 MusicXML/MIDI。6/Y/G/B 及左侧为左手，其右侧为右手，两手独立推进。
+这是 Windows 本地浏览器钢琴应用，TypeScript + Vite。用户提供图片/PDF 给 Codex 转成 `.piano.json`，软件本地读取结构化谱，也支持 MusicXML/MIDI。原生谱允许可选弱起与变拍时间轴，无需因变拍拆文件，规则见 `public/转谱规范.txt`。6/Y/G/B 及左侧为左手，其右侧为右手，两手独立推进。
 
 ## 项目技能
 

@@ -1,0 +1,6426 @@
+{
+  "version": 1,
+  "title": "加勒比海盗 · He's a Pirate",
+  "composer": "Klaus Badelt, Hans Zimmer；dylan 改编",
+  "bpm": 195,
+  "timeSignature": [
+    12,
+    8
+  ],
+  "pickupBeats": 1.5,
+  "meterChanges": [
+    {
+      "beat": 91.5,
+      "timeSignature": [
+        3,
+        4
+      ]
+    }
+  ],
+  "hands": {
+    "left": [
+      {
+        "beat": 1.5,
+        "notes": [
+          {
+            "midi": 38,
+            "beats": 1.5,
+            "spelling": "D2"
+          },
+          {
+            "midi": 50,
+            "beats": 1.5,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 3,
+        "notes": [
+          {
+            "midi": 50,
+            "beats": 1.5,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 4.5,
+        "notes": [
+          {
+            "midi": 34,
+            "beats": 1.5,
+            "spelling": "Bb1"
+          },
+          {
+            "midi": 46,
+            "beats": 1.5,
+            "spelling": "Bb2"
+          }
+        ]
+      },
+      {
+        "beat": 6,
+        "notes": [
+          {
+            "midi": 46,
+            "beats": 1.5,
+            "spelling": "Bb2"
+          }
+        ]
+      },
+      {
+        "beat": 7.5,
+        "notes": [
+          {
+            "midi": 33,
+            "beats": 1.5,
+            "spelling": "A1"
+          },
+          {
+            "midi": 45,
+            "beats": 1.5,
+            "spelling": "A2"
+          }
+        ]
+      },
+      {
+        "beat": 9,
+        "notes": [
+          {
+            "midi": 45,
+            "beats": 1.5,
+            "spelling": "A2"
+          }
+        ]
+      },
+      {
+        "beat": 10.5,
+        "notes": [
+          {
+            "midi": 38,
+            "beats": 1.5,
+            "spelling": "D2"
+          },
+          {
+            "midi": 50,
+            "beats": 1.5,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 12,
+        "notes": [
+          {
+            "midi": 50,
+            "beats": 1.5,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 13.5,
+        "notes": [
+          {
+            "midi": 34,
+            "beats": 1.5,
+            "spelling": "Bb1"
+          },
+          {
+            "midi": 46,
+            "beats": 1.5,
+            "spelling": "Bb2"
+          }
+        ]
+      },
+      {
+        "beat": 15,
+        "notes": [
+          {
+            "midi": 46,
+            "beats": 1.5,
+            "spelling": "Bb2"
+          }
+        ]
+      },
+      {
+        "beat": 16.5,
+        "notes": [
+          {
+            "midi": 29,
+            "beats": 1.5,
+            "spelling": "F1"
+          },
+          {
+            "midi": 41,
+            "beats": 1.5,
+            "spelling": "F2"
+          }
+        ]
+      },
+      {
+        "beat": 18,
+        "notes": [
+          {
+            "midi": 41,
+            "beats": 1.5,
+            "spelling": "F2"
+          }
+        ]
+      },
+      {
+        "beat": 19.5,
+        "notes": [
+          {
+            "midi": 36,
+            "beats": 1.5,
+            "spelling": "C2"
+          },
+          {
+            "midi": 48,
+            "beats": 1.5,
+            "spelling": "C3"
+          }
+        ]
+      },
+      {
+        "beat": 21,
+        "notes": [
+          {
+            "midi": 48,
+            "beats": 1.5,
+            "spelling": "C3"
+          }
+        ]
+      },
+      {
+        "beat": 22.5,
+        "notes": [
+          {
+            "midi": 38,
+            "beats": 1,
+            "spelling": "D2"
+          },
+          {
+            "midi": 50,
+            "beats": 1,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 23.5,
+        "notes": [
+          {
+            "midi": 38,
+            "beats": 0.5,
+            "spelling": "D2"
+          }
+        ]
+      },
+      {
+        "beat": 24,
+        "notes": [
+          {
+            "midi": 38,
+            "beats": 1.5,
+            "spelling": "D2"
+          }
+        ]
+      },
+      {
+        "beat": 25.5,
+        "notes": [
+          {
+            "midi": 38,
+            "beats": 1.5,
+            "spelling": "D2"
+          },
+          {
+            "midi": 50,
+            "beats": 1.5,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 27,
+        "notes": [
+          {
+            "midi": 50,
+            "beats": 1.5,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 28.5,
+        "notes": [
+          {
+            "midi": 34,
+            "beats": 1.5,
+            "spelling": "Bb1"
+          },
+          {
+            "midi": 46,
+            "beats": 1.5,
+            "spelling": "Bb2"
+          }
+        ]
+      },
+      {
+        "beat": 30,
+        "notes": [
+          {
+            "midi": 46,
+            "beats": 1.5,
+            "spelling": "Bb2"
+          }
+        ]
+      },
+      {
+        "beat": 31.5,
+        "notes": [
+          {
+            "midi": 31,
+            "beats": 1.5,
+            "spelling": "G1"
+          },
+          {
+            "midi": 43,
+            "beats": 1.5,
+            "spelling": "G2"
+          }
+        ]
+      },
+      {
+        "beat": 33,
+        "notes": [
+          {
+            "midi": 43,
+            "beats": 1.5,
+            "spelling": "G2"
+          }
+        ]
+      },
+      {
+        "beat": 34.5,
+        "notes": [
+          {
+            "midi": 38,
+            "beats": 1.5,
+            "spelling": "D2"
+          },
+          {
+            "midi": 50,
+            "beats": 1.5,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 36,
+        "notes": [
+          {
+            "midi": 50,
+            "beats": 1.5,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 37.5,
+        "notes": [
+          {
+            "midi": 34,
+            "beats": 1.5,
+            "spelling": "Bb1"
+          },
+          {
+            "midi": 46,
+            "beats": 1.5,
+            "spelling": "Bb2"
+          }
+        ]
+      },
+      {
+        "beat": 39,
+        "notes": [
+          {
+            "midi": 46,
+            "beats": 1.5,
+            "spelling": "Bb2"
+          }
+        ]
+      },
+      {
+        "beat": 40.5,
+        "notes": [
+          {
+            "midi": 38,
+            "beats": 1.5,
+            "spelling": "D2"
+          },
+          {
+            "midi": 50,
+            "beats": 1.5,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 42,
+        "notes": [
+          {
+            "midi": 50,
+            "beats": 1.5,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 43.5,
+        "notes": [
+          {
+            "midi": 33,
+            "beats": 1.5,
+            "spelling": "A1"
+          },
+          {
+            "midi": 45,
+            "beats": 1.5,
+            "spelling": "A2"
+          }
+        ]
+      },
+      {
+        "beat": 45,
+        "notes": [
+          {
+            "midi": 45,
+            "beats": 1.5,
+            "spelling": "A2"
+          }
+        ]
+      },
+      {
+        "beat": 46.5,
+        "notes": [
+          {
+            "midi": 33,
+            "beats": 1,
+            "spelling": "A1"
+          },
+          {
+            "midi": 45,
+            "beats": 1,
+            "spelling": "A2"
+          }
+        ]
+      },
+      {
+        "beat": 47.5,
+        "notes": [
+          {
+            "midi": 33,
+            "beats": 0.5,
+            "spelling": "A1"
+          },
+          {
+            "midi": 45,
+            "beats": 0.5,
+            "spelling": "A2"
+          }
+        ]
+      },
+      {
+        "beat": 48,
+        "notes": [
+          {
+            "midi": 33,
+            "beats": 1.5,
+            "spelling": "A1"
+          },
+          {
+            "midi": 45,
+            "beats": 1.5,
+            "spelling": "A2"
+          }
+        ]
+      },
+      {
+        "beat": 49.5,
+        "notes": [
+          {
+            "midi": 38,
+            "beats": 1.5,
+            "spelling": "D2"
+          },
+          {
+            "midi": 50,
+            "beats": 1.5,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 51,
+        "notes": [
+          {
+            "midi": 50,
+            "beats": 1.5,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 52.5,
+        "notes": [
+          {
+            "midi": 34,
+            "beats": 1.5,
+            "spelling": "Bb1"
+          },
+          {
+            "midi": 46,
+            "beats": 1.5,
+            "spelling": "Bb2"
+          }
+        ]
+      },
+      {
+        "beat": 54,
+        "notes": [
+          {
+            "midi": 46,
+            "beats": 1.5,
+            "spelling": "Bb2"
+          }
+        ]
+      },
+      {
+        "beat": 55.5,
+        "notes": [
+          {
+            "midi": 33,
+            "beats": 1.5,
+            "spelling": "A1"
+          },
+          {
+            "midi": 45,
+            "beats": 1.5,
+            "spelling": "A2"
+          }
+        ]
+      },
+      {
+        "beat": 57,
+        "notes": [
+          {
+            "midi": 45,
+            "beats": 1.5,
+            "spelling": "A2"
+          }
+        ]
+      },
+      {
+        "beat": 58.5,
+        "notes": [
+          {
+            "midi": 38,
+            "beats": 1.5,
+            "spelling": "D2"
+          },
+          {
+            "midi": 50,
+            "beats": 1.5,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 60,
+        "notes": [
+          {
+            "midi": 50,
+            "beats": 1.5,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 61.5,
+        "notes": [
+          {
+            "midi": 34,
+            "beats": 1.5,
+            "spelling": "Bb1"
+          },
+          {
+            "midi": 46,
+            "beats": 1.5,
+            "spelling": "Bb2"
+          }
+        ]
+      },
+      {
+        "beat": 63,
+        "notes": [
+          {
+            "midi": 46,
+            "beats": 1.5,
+            "spelling": "Bb2"
+          }
+        ]
+      },
+      {
+        "beat": 64.5,
+        "notes": [
+          {
+            "midi": 29,
+            "beats": 1.5,
+            "spelling": "F1"
+          },
+          {
+            "midi": 41,
+            "beats": 1.5,
+            "spelling": "F2"
+          }
+        ]
+      },
+      {
+        "beat": 66,
+        "notes": [
+          {
+            "midi": 41,
+            "beats": 1.5,
+            "spelling": "F2"
+          }
+        ]
+      },
+      {
+        "beat": 67.5,
+        "notes": [
+          {
+            "midi": 36,
+            "beats": 1.5,
+            "spelling": "C2"
+          },
+          {
+            "midi": 48,
+            "beats": 1.5,
+            "spelling": "C3"
+          }
+        ]
+      },
+      {
+        "beat": 69,
+        "notes": [
+          {
+            "midi": 48,
+            "beats": 1.5,
+            "spelling": "C3"
+          }
+        ]
+      },
+      {
+        "beat": 70.5,
+        "notes": [
+          {
+            "midi": 38,
+            "beats": 1,
+            "spelling": "D2"
+          },
+          {
+            "midi": 50,
+            "beats": 1,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 71.5,
+        "notes": [
+          {
+            "midi": 38,
+            "beats": 0.5,
+            "spelling": "D2"
+          }
+        ]
+      },
+      {
+        "beat": 72,
+        "notes": [
+          {
+            "midi": 38,
+            "beats": 1.5,
+            "spelling": "D2"
+          }
+        ]
+      },
+      {
+        "beat": 73.5,
+        "notes": [
+          {
+            "midi": 38,
+            "beats": 1.5,
+            "spelling": "D2"
+          },
+          {
+            "midi": 50,
+            "beats": 1.5,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 75,
+        "notes": [
+          {
+            "midi": 50,
+            "beats": 1.5,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 76.5,
+        "notes": [
+          {
+            "midi": 34,
+            "beats": 1.5,
+            "spelling": "Bb1"
+          },
+          {
+            "midi": 46,
+            "beats": 1.5,
+            "spelling": "Bb2"
+          }
+        ]
+      },
+      {
+        "beat": 78,
+        "notes": [
+          {
+            "midi": 46,
+            "beats": 1.5,
+            "spelling": "Bb2"
+          }
+        ]
+      },
+      {
+        "beat": 79.5,
+        "notes": [
+          {
+            "midi": 31,
+            "beats": 1.5,
+            "spelling": "G1"
+          },
+          {
+            "midi": 43,
+            "beats": 1.5,
+            "spelling": "G2"
+          }
+        ]
+      },
+      {
+        "beat": 81,
+        "notes": [
+          {
+            "midi": 43,
+            "beats": 1.5,
+            "spelling": "G2"
+          }
+        ]
+      },
+      {
+        "beat": 82.5,
+        "notes": [
+          {
+            "midi": 38,
+            "beats": 1.5,
+            "spelling": "D2"
+          },
+          {
+            "midi": 50,
+            "beats": 1.5,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 84,
+        "notes": [
+          {
+            "midi": 50,
+            "beats": 1.5,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 85.5,
+        "notes": [
+          {
+            "midi": 34,
+            "beats": 1.5,
+            "spelling": "Bb1"
+          },
+          {
+            "midi": 46,
+            "beats": 1.5,
+            "spelling": "Bb2"
+          }
+        ]
+      },
+      {
+        "beat": 87,
+        "notes": [
+          {
+            "midi": 46,
+            "beats": 1.5,
+            "spelling": "Bb2"
+          }
+        ]
+      },
+      {
+        "beat": 88.5,
+        "notes": [
+          {
+            "midi": 38,
+            "beats": 1.5,
+            "spelling": "D2"
+          },
+          {
+            "midi": 50,
+            "beats": 1.5,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 90,
+        "notes": [
+          {
+            "midi": 50,
+            "beats": 1.5,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 91.5,
+        "notes": [
+          {
+            "midi": 33,
+            "beats": 1,
+            "spelling": "A1"
+          },
+          {
+            "midi": 45,
+            "beats": 1,
+            "spelling": "A2"
+          }
+        ]
+      },
+      {
+        "beat": 92.5,
+        "notes": [
+          {
+            "midi": 33,
+            "beats": 1,
+            "spelling": "A1"
+          },
+          {
+            "midi": 45,
+            "beats": 1,
+            "spelling": "A2"
+          }
+        ]
+      },
+      {
+        "beat": 93.5,
+        "notes": [
+          {
+            "midi": 33,
+            "beats": 1,
+            "spelling": "A1"
+          },
+          {
+            "midi": 45,
+            "beats": 1,
+            "spelling": "A2"
+          }
+        ]
+      },
+      {
+        "beat": 94.5,
+        "notes": [
+          {
+            "midi": 38,
+            "beats": 1,
+            "spelling": "D2"
+          },
+          {
+            "midi": 50,
+            "beats": 1,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 95.5,
+        "notes": [
+          {
+            "midi": 38,
+            "beats": 1,
+            "spelling": "D2"
+          },
+          {
+            "midi": 50,
+            "beats": 1,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 96.5,
+        "notes": [
+          {
+            "midi": 37,
+            "beats": 1,
+            "spelling": "C#2"
+          },
+          {
+            "midi": 49,
+            "beats": 1,
+            "spelling": "C#3"
+          }
+        ]
+      },
+      {
+        "beat": 97.5,
+        "notes": [
+          {
+            "midi": 36,
+            "beats": 1,
+            "spelling": "C2"
+          },
+          {
+            "midi": 48,
+            "beats": 1,
+            "spelling": "C3"
+          }
+        ]
+      },
+      {
+        "beat": 98.5,
+        "notes": [
+          {
+            "midi": 36,
+            "beats": 0.5,
+            "spelling": "C2"
+          },
+          {
+            "midi": 48,
+            "beats": 0.5,
+            "spelling": "C3"
+          }
+        ]
+      },
+      {
+        "beat": 99,
+        "notes": [
+          {
+            "midi": 36,
+            "beats": 0.5,
+            "spelling": "C2"
+          },
+          {
+            "midi": 48,
+            "beats": 0.5,
+            "spelling": "C3"
+          }
+        ]
+      },
+      {
+        "beat": 99.5,
+        "notes": [
+          {
+            "midi": 34,
+            "beats": 1,
+            "spelling": "Bb1"
+          },
+          {
+            "midi": 46,
+            "beats": 1,
+            "spelling": "Bb2"
+          }
+        ]
+      },
+      {
+        "beat": 100.5,
+        "notes": [
+          {
+            "midi": 33,
+            "beats": 3,
+            "spelling": "A1"
+          },
+          {
+            "midi": 45,
+            "beats": 3,
+            "spelling": "A2"
+          }
+        ]
+      },
+      {
+        "beat": 101.5,
+        "notes": [
+          {
+            "midi": 50,
+            "beats": 0.3333333333333333,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 101.83333333333333,
+        "notes": [
+          {
+            "midi": 53,
+            "beats": 0.3333333333333333,
+            "spelling": "F3"
+          }
+        ]
+      },
+      {
+        "beat": 102.16666666666667,
+        "notes": [
+          {
+            "midi": 57,
+            "beats": 0.3333333333333333,
+            "spelling": "A3"
+          }
+        ]
+      },
+      {
+        "beat": 103.5,
+        "notes": [
+          {
+            "midi": 31,
+            "beats": 3,
+            "spelling": "G1"
+          },
+          {
+            "midi": 43,
+            "beats": 3,
+            "spelling": "G2"
+          }
+        ]
+      },
+      {
+        "beat": 104.5,
+        "notes": [
+          {
+            "midi": 50,
+            "beats": 0.3333333333333333,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 104.83333333333333,
+        "notes": [
+          {
+            "midi": 55,
+            "beats": 0.3333333333333333,
+            "spelling": "G3"
+          }
+        ]
+      },
+      {
+        "beat": 105.16666666666667,
+        "notes": [
+          {
+            "midi": 58,
+            "beats": 0.3333333333333333,
+            "spelling": "Bb3"
+          }
+        ]
+      },
+      {
+        "beat": 106.5,
+        "notes": [
+          {
+            "midi": 33,
+            "beats": 3,
+            "spelling": "A1"
+          },
+          {
+            "midi": 45,
+            "beats": 3,
+            "spelling": "A2"
+          }
+        ]
+      },
+      {
+        "beat": 108.5,
+        "notes": [
+          {
+            "midi": 57,
+            "beats": 0.3333333333333333,
+            "spelling": "A3"
+          }
+        ]
+      },
+      {
+        "beat": 108.83333333333333,
+        "notes": [
+          {
+            "midi": 53,
+            "beats": 0.3333333333333333,
+            "spelling": "F3"
+          }
+        ]
+      },
+      {
+        "beat": 109.16666666666667,
+        "notes": [
+          {
+            "midi": 50,
+            "beats": 0.3333333333333333,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 109.5,
+        "notes": [
+          {
+            "midi": 33,
+            "beats": 3,
+            "spelling": "A1"
+          },
+          {
+            "midi": 45,
+            "beats": 3,
+            "spelling": "A2"
+          }
+        ]
+      },
+      {
+        "beat": 112.5,
+        "notes": [
+          {
+            "midi": 50,
+            "beats": 0.5,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 113,
+        "notes": [
+          {
+            "midi": 57,
+            "beats": 0.5,
+            "spelling": "A3"
+          }
+        ]
+      },
+      {
+        "beat": 113.5,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 2,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 115.5,
+        "notes": [
+          {
+            "midi": 48,
+            "beats": 0.5,
+            "spelling": "C3"
+          }
+        ]
+      },
+      {
+        "beat": 116,
+        "notes": [
+          {
+            "midi": 55,
+            "beats": 0.5,
+            "spelling": "G3"
+          }
+        ]
+      },
+      {
+        "beat": 116.5,
+        "notes": [
+          {
+            "midi": 60,
+            "beats": 2,
+            "spelling": "C4"
+          }
+        ]
+      },
+      {
+        "beat": 118.5,
+        "notes": [
+          {
+            "midi": 53,
+            "beats": 0.5,
+            "spelling": "F3"
+          }
+        ]
+      },
+      {
+        "beat": 119,
+        "notes": [
+          {
+            "midi": 60,
+            "beats": 0.5,
+            "spelling": "C4"
+          }
+        ]
+      },
+      {
+        "beat": 119.5,
+        "notes": [
+          {
+            "midi": 65,
+            "beats": 2,
+            "spelling": "F4"
+          }
+        ]
+      },
+      {
+        "beat": 121.5,
+        "notes": [
+          {
+            "midi": 48,
+            "beats": 0.5,
+            "spelling": "C3"
+          }
+        ]
+      },
+      {
+        "beat": 122,
+        "notes": [
+          {
+            "midi": 55,
+            "beats": 0.5,
+            "spelling": "G3"
+          }
+        ]
+      },
+      {
+        "beat": 122.5,
+        "notes": [
+          {
+            "midi": 60,
+            "beats": 2,
+            "spelling": "C4"
+          }
+        ]
+      },
+      {
+        "beat": 124.5,
+        "notes": [
+          {
+            "midi": 50,
+            "beats": 0.5,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 125,
+        "notes": [
+          {
+            "midi": 57,
+            "beats": 0.5,
+            "spelling": "A3"
+          }
+        ]
+      },
+      {
+        "beat": 125.5,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 2,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 127.5,
+        "notes": [
+          {
+            "midi": 45,
+            "beats": 0.5,
+            "spelling": "A2"
+          }
+        ]
+      },
+      {
+        "beat": 128,
+        "notes": [
+          {
+            "midi": 52,
+            "beats": 0.5,
+            "spelling": "E3"
+          }
+        ]
+      },
+      {
+        "beat": 128.5,
+        "notes": [
+          {
+            "midi": 57,
+            "beats": 2,
+            "spelling": "A3"
+          }
+        ]
+      },
+      {
+        "beat": 130.5,
+        "notes": [
+          {
+            "midi": 50,
+            "beats": 0.5,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 131,
+        "notes": [
+          {
+            "midi": 57,
+            "beats": 0.5,
+            "spelling": "A3"
+          }
+        ]
+      },
+      {
+        "beat": 131.5,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 1,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 132.5,
+        "notes": [
+          {
+            "midi": 48,
+            "beats": 1,
+            "spelling": "C3"
+          }
+        ]
+      },
+      {
+        "beat": 133.5,
+        "notes": [
+          {
+            "midi": 50,
+            "beats": 0.5,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 134,
+        "notes": [
+          {
+            "midi": 57,
+            "beats": 0.5,
+            "spelling": "A3"
+          }
+        ]
+      },
+      {
+        "beat": 134.5,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 2,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 136.5,
+        "notes": [
+          {
+            "midi": 38,
+            "beats": 0.5,
+            "spelling": "D2"
+          }
+        ]
+      },
+      {
+        "beat": 137,
+        "notes": [
+          {
+            "midi": 45,
+            "beats": 0.5,
+            "spelling": "A2"
+          }
+        ]
+      },
+      {
+        "beat": 137.5,
+        "notes": [
+          {
+            "midi": 50,
+            "beats": 2,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 139.5,
+        "notes": [
+          {
+            "midi": 36,
+            "beats": 0.5,
+            "spelling": "C2"
+          }
+        ]
+      },
+      {
+        "beat": 140,
+        "notes": [
+          {
+            "midi": 43,
+            "beats": 0.5,
+            "spelling": "G2"
+          }
+        ]
+      },
+      {
+        "beat": 140.5,
+        "notes": [
+          {
+            "midi": 48,
+            "beats": 2,
+            "spelling": "C3"
+          }
+        ]
+      },
+      {
+        "beat": 142.5,
+        "notes": [
+          {
+            "midi": 41,
+            "beats": 0.5,
+            "spelling": "F2"
+          }
+        ]
+      },
+      {
+        "beat": 143,
+        "notes": [
+          {
+            "midi": 48,
+            "beats": 0.5,
+            "spelling": "C3"
+          }
+        ]
+      },
+      {
+        "beat": 143.5,
+        "notes": [
+          {
+            "midi": 53,
+            "beats": 2,
+            "spelling": "F3"
+          }
+        ]
+      },
+      {
+        "beat": 145.5,
+        "notes": [
+          {
+            "midi": 34,
+            "beats": 1,
+            "spelling": "Bb1"
+          },
+          {
+            "midi": 46,
+            "beats": 1,
+            "spelling": "Bb2"
+          }
+        ]
+      },
+      {
+        "beat": 146.5,
+        "notes": [
+          {
+            "midi": 46,
+            "beats": 2,
+            "spelling": "Bb2"
+          }
+        ]
+      },
+      {
+        "beat": 148.5,
+        "notes": [
+          {
+            "midi": 33,
+            "beats": 1,
+            "spelling": "A1"
+          },
+          {
+            "midi": 45,
+            "beats": 1,
+            "spelling": "A2"
+          }
+        ]
+      },
+      {
+        "beat": 149.5,
+        "notes": [
+          {
+            "midi": 45,
+            "beats": 2,
+            "spelling": "A2"
+          }
+        ]
+      },
+      {
+        "beat": 151.5,
+        "notes": [
+          {
+            "midi": 31,
+            "beats": 1,
+            "spelling": "G1"
+          },
+          {
+            "midi": 43,
+            "beats": 1,
+            "spelling": "G2"
+          }
+        ]
+      },
+      {
+        "beat": 152.5,
+        "notes": [
+          {
+            "midi": 43,
+            "beats": 2,
+            "spelling": "G2"
+          }
+        ]
+      },
+      {
+        "beat": 154.5,
+        "notes": [
+          {
+            "midi": 33,
+            "beats": 1,
+            "spelling": "A1"
+          },
+          {
+            "midi": 45,
+            "beats": 1,
+            "spelling": "A2"
+          }
+        ]
+      },
+      {
+        "beat": 155.5,
+        "notes": [
+          {
+            "midi": 45,
+            "beats": 2,
+            "spelling": "A2"
+          }
+        ]
+      },
+      {
+        "beat": 157.5,
+        "notes": [
+          {
+            "midi": 33,
+            "beats": 1,
+            "spelling": "A1"
+          },
+          {
+            "midi": 45,
+            "beats": 1,
+            "spelling": "A2"
+          }
+        ]
+      },
+      {
+        "beat": 158.5,
+        "notes": [
+          {
+            "midi": 45,
+            "beats": 2,
+            "spelling": "A2"
+          }
+        ]
+      },
+      {
+        "beat": 160.5,
+        "notes": [
+          {
+            "midi": 57,
+            "beats": 3,
+            "spelling": "A3"
+          }
+        ]
+      },
+      {
+        "beat": 161.5,
+        "notes": [
+          {
+            "midi": 57,
+            "beats": 0.3333333333333333,
+            "spelling": "A3"
+          }
+        ]
+      },
+      {
+        "beat": 161.83333333333334,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 0.3333333333333333,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 162.16666666666666,
+        "notes": [
+          {
+            "midi": 65,
+            "beats": 0.3333333333333333,
+            "spelling": "F4"
+          }
+        ]
+      },
+      {
+        "beat": 163.5,
+        "notes": [
+          {
+            "midi": 58,
+            "beats": 3,
+            "spelling": "Bb3"
+          }
+        ]
+      },
+      {
+        "beat": 164.5,
+        "notes": [
+          {
+            "midi": 58,
+            "beats": 0.3333333333333333,
+            "spelling": "Bb3"
+          }
+        ]
+      },
+      {
+        "beat": 164.83333333333334,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 0.3333333333333333,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 165.16666666666666,
+        "notes": [
+          {
+            "midi": 65,
+            "beats": 0.3333333333333333,
+            "spelling": "F4"
+          }
+        ]
+      },
+      {
+        "beat": 166.5,
+        "notes": [
+          {
+            "midi": 65,
+            "beats": 1,
+            "spelling": "F4"
+          },
+          {
+            "midi": 69,
+            "beats": 1,
+            "spelling": "A4"
+          }
+        ]
+      },
+      {
+        "beat": 167.5,
+        "notes": [
+          {
+            "midi": 65,
+            "beats": 1,
+            "spelling": "F4"
+          },
+          {
+            "midi": 69,
+            "beats": 1,
+            "spelling": "A4"
+          }
+        ]
+      },
+      {
+        "beat": 168.5,
+        "notes": [
+          {
+            "midi": 65,
+            "beats": 1,
+            "spelling": "F4"
+          },
+          {
+            "midi": 69,
+            "beats": 1,
+            "spelling": "A4"
+          }
+        ]
+      },
+      {
+        "beat": 169.5,
+        "notes": [
+          {
+            "midi": 69,
+            "beats": 0.5,
+            "spelling": "A4"
+          }
+        ]
+      },
+      {
+        "beat": 170,
+        "notes": [
+          {
+            "midi": 67,
+            "beats": 0.5,
+            "spelling": "G4"
+          }
+        ]
+      },
+      {
+        "beat": 171.5,
+        "notes": [
+          {
+            "midi": 67,
+            "beats": 0.3333333333333333,
+            "spelling": "G4"
+          }
+        ]
+      },
+      {
+        "beat": 171.83333333333334,
+        "notes": [
+          {
+            "midi": 64,
+            "beats": 0.3333333333333333,
+            "spelling": "E4"
+          }
+        ]
+      },
+      {
+        "beat": 172.16666666666666,
+        "notes": [
+          {
+            "midi": 60,
+            "beats": 0.3333333333333333,
+            "spelling": "C4"
+          }
+        ]
+      },
+      {
+        "beat": 172.5,
+        "notes": [
+          {
+            "midi": 55,
+            "beats": 3,
+            "spelling": "G3"
+          }
+        ]
+      },
+      {
+        "beat": 173.5,
+        "notes": [
+          {
+            "midi": 55,
+            "beats": 0.3333333333333333,
+            "spelling": "G3"
+          }
+        ]
+      },
+      {
+        "beat": 173.83333333333334,
+        "notes": [
+          {
+            "midi": 58,
+            "beats": 0.3333333333333333,
+            "spelling": "Bb3"
+          }
+        ]
+      },
+      {
+        "beat": 174.16666666666666,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 0.3333333333333333,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 175.5,
+        "notes": [
+          {
+            "midi": 53,
+            "beats": 3,
+            "spelling": "F3"
+          }
+        ]
+      },
+      {
+        "beat": 176.5,
+        "notes": [
+          {
+            "midi": 53,
+            "beats": 0.3333333333333333,
+            "spelling": "F3"
+          }
+        ]
+      },
+      {
+        "beat": 176.83333333333334,
+        "notes": [
+          {
+            "midi": 57,
+            "beats": 0.3333333333333333,
+            "spelling": "A3"
+          }
+        ]
+      },
+      {
+        "beat": 177.16666666666666,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 0.3333333333333333,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 178.5,
+        "notes": [
+          {
+            "midi": 57,
+            "beats": 1,
+            "spelling": "A3"
+          },
+          {
+            "midi": 64,
+            "beats": 1,
+            "spelling": "E4"
+          }
+        ]
+      },
+      {
+        "beat": 179.5,
+        "notes": [
+          {
+            "midi": 57,
+            "beats": 1.5,
+            "spelling": "A3"
+          },
+          {
+            "midi": 65,
+            "beats": 1.5,
+            "spelling": "F4"
+          }
+        ]
+      },
+      {
+        "beat": 181.5,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 3,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 182.5,
+        "notes": [
+          {
+            "midi": 57,
+            "beats": 0.3333333333333333,
+            "spelling": "A3"
+          }
+        ]
+      },
+      {
+        "beat": 182.83333333333334,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 0.3333333333333333,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 183.16666666666666,
+        "notes": [
+          {
+            "midi": 65,
+            "beats": 0.3333333333333333,
+            "spelling": "F4"
+          }
+        ]
+      },
+      {
+        "beat": 184.5,
+        "notes": [
+          {
+            "midi": 57,
+            "beats": 3,
+            "spelling": "A3"
+          }
+        ]
+      },
+      {
+        "beat": 185.5,
+        "notes": [
+          {
+            "midi": 57,
+            "beats": 0.3333333333333333,
+            "spelling": "A3"
+          }
+        ]
+      },
+      {
+        "beat": 185.83333333333334,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 0.3333333333333333,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 186.16666666666666,
+        "notes": [
+          {
+            "midi": 65,
+            "beats": 0.3333333333333333,
+            "spelling": "F4"
+          }
+        ]
+      },
+      {
+        "beat": 187.5,
+        "notes": [
+          {
+            "midi": 58,
+            "beats": 3,
+            "spelling": "Bb3"
+          }
+        ]
+      },
+      {
+        "beat": 188.5,
+        "notes": [
+          {
+            "midi": 58,
+            "beats": 0.3333333333333333,
+            "spelling": "Bb3"
+          }
+        ]
+      },
+      {
+        "beat": 188.83333333333334,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 0.3333333333333333,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 189.16666666666666,
+        "notes": [
+          {
+            "midi": 65,
+            "beats": 0.3333333333333333,
+            "spelling": "F4"
+          }
+        ]
+      },
+      {
+        "beat": 190.5,
+        "notes": [
+          {
+            "midi": 65,
+            "beats": 1,
+            "spelling": "F4"
+          },
+          {
+            "midi": 69,
+            "beats": 1,
+            "spelling": "A4"
+          }
+        ]
+      },
+      {
+        "beat": 191.5,
+        "notes": [
+          {
+            "midi": 65,
+            "beats": 1,
+            "spelling": "F4"
+          },
+          {
+            "midi": 69,
+            "beats": 1,
+            "spelling": "A4"
+          }
+        ]
+      },
+      {
+        "beat": 192.5,
+        "notes": [
+          {
+            "midi": 65,
+            "beats": 1,
+            "spelling": "F4"
+          },
+          {
+            "midi": 69,
+            "beats": 1,
+            "spelling": "A4"
+          }
+        ]
+      },
+      {
+        "beat": 193.5,
+        "notes": [
+          {
+            "midi": 69,
+            "beats": 0.5,
+            "spelling": "A4"
+          }
+        ]
+      },
+      {
+        "beat": 194,
+        "notes": [
+          {
+            "midi": 67,
+            "beats": 0.5,
+            "spelling": "G4"
+          }
+        ]
+      },
+      {
+        "beat": 195.5,
+        "notes": [
+          {
+            "midi": 67,
+            "beats": 0.3333333333333333,
+            "spelling": "G4"
+          }
+        ]
+      },
+      {
+        "beat": 195.83333333333334,
+        "notes": [
+          {
+            "midi": 64,
+            "beats": 0.3333333333333333,
+            "spelling": "E4"
+          }
+        ]
+      },
+      {
+        "beat": 196.16666666666666,
+        "notes": [
+          {
+            "midi": 60,
+            "beats": 0.3333333333333333,
+            "spelling": "C4"
+          }
+        ]
+      },
+      {
+        "beat": 196.5,
+        "notes": [
+          {
+            "midi": 55,
+            "beats": 3,
+            "spelling": "G3"
+          }
+        ]
+      },
+      {
+        "beat": 197.5,
+        "notes": [
+          {
+            "midi": 55,
+            "beats": 0.3333333333333333,
+            "spelling": "G3"
+          }
+        ]
+      },
+      {
+        "beat": 197.83333333333334,
+        "notes": [
+          {
+            "midi": 58,
+            "beats": 0.3333333333333333,
+            "spelling": "Bb3"
+          }
+        ]
+      },
+      {
+        "beat": 198.16666666666666,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 0.3333333333333333,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 199.5,
+        "notes": [
+          {
+            "midi": 53,
+            "beats": 3,
+            "spelling": "F3"
+          }
+        ]
+      },
+      {
+        "beat": 200.5,
+        "notes": [
+          {
+            "midi": 53,
+            "beats": 0.3333333333333333,
+            "spelling": "F3"
+          }
+        ]
+      },
+      {
+        "beat": 200.83333333333334,
+        "notes": [
+          {
+            "midi": 57,
+            "beats": 0.3333333333333333,
+            "spelling": "A3"
+          }
+        ]
+      },
+      {
+        "beat": 201.16666666666666,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 0.3333333333333333,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 202.5,
+        "notes": [
+          {
+            "midi": 57,
+            "beats": 1,
+            "spelling": "A3"
+          },
+          {
+            "midi": 64,
+            "beats": 1,
+            "spelling": "E4"
+          }
+        ]
+      },
+      {
+        "beat": 203.5,
+        "notes": [
+          {
+            "midi": 57,
+            "beats": 1.5,
+            "spelling": "A3"
+          },
+          {
+            "midi": 65,
+            "beats": 1.5,
+            "spelling": "F4"
+          }
+        ]
+      },
+      {
+        "beat": 205.5,
+        "notes": [
+          {
+            "midi": 57,
+            "beats": 1,
+            "spelling": "A3"
+          }
+        ]
+      },
+      {
+        "beat": 206.5,
+        "notes": [
+          {
+            "midi": 50,
+            "beats": 2,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 208.5,
+        "notes": [
+          {
+            "midi": 58,
+            "beats": 1,
+            "spelling": "Bb3"
+          }
+        ]
+      },
+      {
+        "beat": 209.5,
+        "notes": [
+          {
+            "midi": 50,
+            "beats": 2,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 211.5,
+        "notes": [
+          {
+            "midi": 53,
+            "beats": 1,
+            "spelling": "F3"
+          }
+        ]
+      },
+      {
+        "beat": 212.5,
+        "notes": [
+          {
+            "midi": 53,
+            "beats": 1,
+            "spelling": "F3"
+          }
+        ]
+      },
+      {
+        "beat": 213.5,
+        "notes": [
+          {
+            "midi": 57,
+            "beats": 1,
+            "spelling": "A3"
+          }
+        ]
+      },
+      {
+        "beat": 214.5,
+        "notes": [
+          {
+            "midi": 48,
+            "beats": 1,
+            "spelling": "C3"
+          }
+        ]
+      },
+      {
+        "beat": 215.5,
+        "notes": [
+          {
+            "midi": 55,
+            "beats": 1,
+            "spelling": "G3"
+          }
+        ]
+      },
+      {
+        "beat": 216.5,
+        "notes": [
+          {
+            "midi": 60,
+            "beats": 1,
+            "spelling": "C4"
+          },
+          {
+            "midi": 64,
+            "beats": 1,
+            "spelling": "E4"
+          }
+        ]
+      },
+      {
+        "beat": 217.5,
+        "notes": [
+          {
+            "midi": 55,
+            "beats": 1,
+            "spelling": "G3"
+          }
+        ]
+      },
+      {
+        "beat": 218.5,
+        "notes": [
+          {
+            "midi": 43,
+            "beats": 2,
+            "spelling": "G2"
+          }
+        ]
+      },
+      {
+        "beat": 220.5,
+        "notes": [
+          {
+            "midi": 53,
+            "beats": 1,
+            "spelling": "F3"
+          }
+        ]
+      },
+      {
+        "beat": 221.5,
+        "notes": [
+          {
+            "midi": 38,
+            "beats": 2,
+            "spelling": "D2"
+          }
+        ]
+      },
+      {
+        "beat": 223.5,
+        "notes": [
+          {
+            "midi": 45,
+            "beats": 1,
+            "spelling": "A2"
+          }
+        ]
+      },
+      {
+        "beat": 224.5,
+        "notes": [
+          {
+            "midi": 53,
+            "beats": 2,
+            "spelling": "F3"
+          }
+        ]
+      },
+      {
+        "beat": 226.5,
+        "notes": [
+          {
+            "midi": 38,
+            "beats": 1,
+            "spelling": "D2"
+          }
+        ]
+      },
+      {
+        "beat": 227.5,
+        "notes": [
+          {
+            "midi": 50,
+            "beats": 2,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 229.5,
+        "notes": [
+          {
+            "midi": 57,
+            "beats": 1,
+            "spelling": "A3"
+          }
+        ]
+      },
+      {
+        "beat": 230.5,
+        "notes": [
+          {
+            "midi": 50,
+            "beats": 2,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 232.5,
+        "notes": [
+          {
+            "midi": 58,
+            "beats": 1,
+            "spelling": "Bb3"
+          }
+        ]
+      },
+      {
+        "beat": 233.5,
+        "notes": [
+          {
+            "midi": 50,
+            "beats": 2,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 235.5,
+        "notes": [
+          {
+            "midi": 53,
+            "beats": 1,
+            "spelling": "F3"
+          }
+        ]
+      },
+      {
+        "beat": 236.5,
+        "notes": [
+          {
+            "midi": 53,
+            "beats": 1,
+            "spelling": "F3"
+          }
+        ]
+      },
+      {
+        "beat": 237.5,
+        "notes": [
+          {
+            "midi": 57,
+            "beats": 1,
+            "spelling": "A3"
+          }
+        ]
+      },
+      {
+        "beat": 238.5,
+        "notes": [
+          {
+            "midi": 48,
+            "beats": 1,
+            "spelling": "C3"
+          }
+        ]
+      },
+      {
+        "beat": 239.5,
+        "notes": [
+          {
+            "midi": 55,
+            "beats": 1,
+            "spelling": "G3"
+          }
+        ]
+      },
+      {
+        "beat": 240.5,
+        "notes": [
+          {
+            "midi": 60,
+            "beats": 1,
+            "spelling": "C4"
+          },
+          {
+            "midi": 64,
+            "beats": 1,
+            "spelling": "E4"
+          }
+        ]
+      },
+      {
+        "beat": 241.5,
+        "notes": [
+          {
+            "midi": 55,
+            "beats": 1,
+            "spelling": "G3"
+          }
+        ]
+      },
+      {
+        "beat": 242.5,
+        "notes": [
+          {
+            "midi": 43,
+            "beats": 2,
+            "spelling": "G2"
+          }
+        ]
+      },
+      {
+        "beat": 244.5,
+        "notes": [
+          {
+            "midi": 53,
+            "beats": 1,
+            "spelling": "F3"
+          }
+        ]
+      },
+      {
+        "beat": 245.5,
+        "notes": [
+          {
+            "midi": 38,
+            "beats": 2,
+            "spelling": "D2"
+          }
+        ]
+      },
+      {
+        "beat": 247.5,
+        "notes": [
+          {
+            "midi": 45,
+            "beats": 1,
+            "spelling": "A2"
+          }
+        ]
+      },
+      {
+        "beat": 248.5,
+        "notes": [
+          {
+            "midi": 53,
+            "beats": 2,
+            "spelling": "F3"
+          }
+        ]
+      },
+      {
+        "beat": 250.5,
+        "notes": [
+          {
+            "midi": 38,
+            "beats": 1,
+            "spelling": "D2"
+          }
+        ]
+      },
+      {
+        "beat": 251.5,
+        "notes": [
+          {
+            "midi": 50,
+            "beats": 2,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 253.5,
+        "notes": [
+          {
+            "midi": 33,
+            "beats": 12,
+            "spelling": "A1"
+          },
+          {
+            "midi": 45,
+            "beats": 12,
+            "spelling": "A2"
+          }
+        ]
+      },
+      {
+        "beat": 265.5,
+        "notes": [
+          {
+            "midi": 33,
+            "beats": 6,
+            "spelling": "A1"
+          },
+          {
+            "midi": 45,
+            "beats": 6,
+            "spelling": "A2"
+          }
+        ]
+      },
+      {
+        "beat": 266.5,
+        "notes": [
+          {
+            "midi": 50,
+            "beats": 0.3333333333333333,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 266.8333333333333,
+        "notes": [
+          {
+            "midi": 53,
+            "beats": 0.3333333333333333,
+            "spelling": "F3"
+          }
+        ]
+      },
+      {
+        "beat": 267.1666666666667,
+        "notes": [
+          {
+            "midi": 57,
+            "beats": 0.3333333333333333,
+            "spelling": "A3"
+          }
+        ]
+      },
+      {
+        "beat": 271.5,
+        "notes": [
+          {
+            "midi": 26,
+            "beats": 1,
+            "spelling": "D1"
+          },
+          {
+            "midi": 38,
+            "beats": 1,
+            "spelling": "D2"
+          }
+        ]
+      },
+      {
+        "beat": 272.5,
+        "notes": [
+          {
+            "midi": 38,
+            "beats": 1,
+            "spelling": "D2"
+          }
+        ]
+      },
+      {
+        "beat": 273.5,
+        "notes": [
+          {
+            "midi": 50,
+            "beats": 1,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 274.5,
+        "notes": [
+          {
+            "midi": 50,
+            "beats": 1,
+            "spelling": "D3"
+          }
+        ]
+      },
+      {
+        "beat": 275.5,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 1,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 276.5,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 1,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 277.5,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 3,
+            "spelling": "D4"
+          },
+          {
+            "midi": 65,
+            "beats": 3,
+            "spelling": "F4"
+          },
+          {
+            "midi": 69,
+            "beats": 3,
+            "spelling": "A4"
+          }
+        ]
+      },
+      {
+        "beat": 280.5,
+        "notes": [
+          {
+            "midi": 38,
+            "beats": 3,
+            "spelling": "D2"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "beat": 0.5,
+        "notes": [
+          {
+            "midi": 57,
+            "beats": 0.5,
+            "spelling": "A3"
+          }
+        ]
+      },
+      {
+        "beat": 1,
+        "notes": [
+          {
+            "midi": 60,
+            "beats": 0.5,
+            "spelling": "C4"
+          }
+        ]
+      },
+      {
+        "beat": 1.5,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 0.5,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 2.5,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 0.5,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 3.5,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 0.5,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 4,
+        "notes": [
+          {
+            "midi": 64,
+            "beats": 0.5,
+            "spelling": "E4"
+          }
+        ]
+      },
+      {
+        "beat": 4.5,
+        "notes": [
+          {
+            "midi": 65,
+            "beats": 0.5,
+            "spelling": "F4"
+          }
+        ]
+      },
+      {
+        "beat": 5.5,
+        "notes": [
+          {
+            "midi": 65,
+            "beats": 0.5,
+            "spelling": "F4"
+          }
+        ]
+      },
+      {
+        "beat": 6.5,
+        "notes": [
+          {
+            "midi": 65,
+            "beats": 0.5,
+            "spelling": "F4"
+          }
+        ]
+      },
+      {
+        "beat": 7,
+        "notes": [
+          {
+            "midi": 67,
+            "beats": 0.5,
+            "spelling": "G4"
+          }
+        ]
+      },
+      {
+        "beat": 7.5,
+        "notes": [
+          {
+            "midi": 64,
+            "beats": 0.5,
+            "spelling": "E4"
+          }
+        ]
+      },
+      {
+        "beat": 8.5,
+        "notes": [
+          {
+            "midi": 64,
+            "beats": 0.5,
+            "spelling": "E4"
+          }
+        ]
+      },
+      {
+        "beat": 9.5,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 0.5,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 10,
+        "notes": [
+          {
+            "midi": 60,
+            "beats": 0.5,
+            "spelling": "C4"
+          }
+        ]
+      },
+      {
+        "beat": 10.5,
+        "notes": [
+          {
+            "midi": 60,
+            "beats": 0.5,
+            "spelling": "C4"
+          }
+        ]
+      },
+      {
+        "beat": 11,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 1,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 12.5,
+        "notes": [
+          {
+            "midi": 57,
+            "beats": 0.5,
+            "spelling": "A3"
+          }
+        ]
+      },
+      {
+        "beat": 13,
+        "notes": [
+          {
+            "midi": 60,
+            "beats": 0.5,
+            "spelling": "C4"
+          }
+        ]
+      },
+      {
+        "beat": 13.5,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 0.5,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 14.5,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 0.5,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 15.5,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 0.5,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 16,
+        "notes": [
+          {
+            "midi": 64,
+            "beats": 0.5,
+            "spelling": "E4"
+          }
+        ]
+      },
+      {
+        "beat": 16.5,
+        "notes": [
+          {
+            "midi": 65,
+            "beats": 0.5,
+            "spelling": "F4"
+          }
+        ]
+      },
+      {
+        "beat": 17.5,
+        "notes": [
+          {
+            "midi": 65,
+            "beats": 0.5,
+            "spelling": "F4"
+          }
+        ]
+      },
+      {
+        "beat": 18.5,
+        "notes": [
+          {
+            "midi": 65,
+            "beats": 0.5,
+            "spelling": "F4"
+          }
+        ]
+      },
+      {
+        "beat": 19,
+        "notes": [
+          {
+            "midi": 67,
+            "beats": 0.5,
+            "spelling": "G4"
+          }
+        ]
+      },
+      {
+        "beat": 19.5,
+        "notes": [
+          {
+            "midi": 64,
+            "beats": 0.5,
+            "spelling": "E4"
+          }
+        ]
+      },
+      {
+        "beat": 20.5,
+        "notes": [
+          {
+            "midi": 64,
+            "beats": 0.5,
+            "spelling": "E4"
+          }
+        ]
+      },
+      {
+        "beat": 21.5,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 0.5,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 22,
+        "notes": [
+          {
+            "midi": 60,
+            "beats": 0.5,
+            "spelling": "C4"
+          }
+        ]
+      },
+      {
+        "beat": 22.5,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 1,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 24.5,
+        "notes": [
+          {
+            "midi": 57,
+            "beats": 0.5,
+            "spelling": "A3"
+          }
+        ]
+      },
+      {
+        "beat": 25,
+        "notes": [
+          {
+            "midi": 60,
+            "beats": 0.5,
+            "spelling": "C4"
+          }
+        ]
+      },
+      {
+        "beat": 25.5,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 0.5,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 26.5,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 0.5,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 27.5,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 0.5,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 28,
+        "notes": [
+          {
+            "midi": 65,
+            "beats": 0.5,
+            "spelling": "F4"
+          }
+        ]
+      },
+      {
+        "beat": 28.5,
+        "notes": [
+          {
+            "midi": 67,
+            "beats": 0.5,
+            "spelling": "G4"
+          }
+        ]
+      },
+      {
+        "beat": 29.5,
+        "notes": [
+          {
+            "midi": 67,
+            "beats": 0.5,
+            "spelling": "G4"
+          }
+        ]
+      },
+      {
+        "beat": 30.5,
+        "notes": [
+          {
+            "midi": 67,
+            "beats": 0.5,
+            "spelling": "G4"
+          }
+        ]
+      },
+      {
+        "beat": 31,
+        "notes": [
+          {
+            "midi": 69,
+            "beats": 0.5,
+            "spelling": "A4"
+          }
+        ]
+      },
+      {
+        "beat": 31.5,
+        "notes": [
+          {
+            "midi": 70,
+            "beats": 0.5,
+            "spelling": "Bb4"
+          }
+        ]
+      },
+      {
+        "beat": 32.5,
+        "notes": [
+          {
+            "midi": 70,
+            "beats": 0.5,
+            "spelling": "Bb4"
+          }
+        ]
+      },
+      {
+        "beat": 33.5,
+        "notes": [
+          {
+            "midi": 69,
+            "beats": 0.5,
+            "spelling": "A4"
+          }
+        ]
+      },
+      {
+        "beat": 34,
+        "notes": [
+          {
+            "midi": 67,
+            "beats": 0.5,
+            "spelling": "G4"
+          }
+        ]
+      },
+      {
+        "beat": 34.5,
+        "notes": [
+          {
+            "midi": 69,
+            "beats": 0.5,
+            "spelling": "A4"
+          }
+        ]
+      },
+      {
+        "beat": 35,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 0.5,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 36.5,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 0.5,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 37,
+        "notes": [
+          {
+            "midi": 64,
+            "beats": 0.5,
+            "spelling": "E4"
+          }
+        ]
+      },
+      {
+        "beat": 37.5,
+        "notes": [
+          {
+            "midi": 65,
+            "beats": 0.5,
+            "spelling": "F4"
+          }
+        ]
+      },
+      {
+        "beat": 38.5,
+        "notes": [
+          {
+            "midi": 65,
+            "beats": 0.5,
+            "spelling": "F4"
+          }
+        ]
+      },
+      {
+        "beat": 39.5,
+        "notes": [
+          {
+            "midi": 67,
+            "beats": 0.5,
+            "spelling": "G4"
+          }
+        ]
+      },
+      {
+        "beat": 40.5,
+        "notes": [
+          {
+            "midi": 69,
+            "beats": 0.5,
+            "spelling": "A4"
+          }
+        ]
+      },
+      {
+        "beat": 41,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 0.5,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 42.5,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 0.5,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 43,
+        "notes": [
+          {
+            "midi": 65,
+            "beats": 0.5,
+            "spelling": "F4"
+          }
+        ]
+      },
+      {
+        "beat": 43.5,
+        "notes": [
+          {
+            "midi": 64,
+            "beats": 0.5,
+            "spelling": "E4"
+          }
+        ]
+      },
+      {
+        "beat": 44.5,
+        "notes": [
+          {
+            "midi": 64,
+            "beats": 0.5,
+            "spelling": "E4"
+          }
+        ]
+      },
+      {
+        "beat": 45.5,
+        "notes": [
+          {
+            "midi": 65,
+            "beats": 0.5,
+            "spelling": "F4"
+          }
+        ]
+      },
+      {
+        "beat": 46,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 0.5,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 46.5,
+        "notes": [
+          {
+            "midi": 64,
+            "beats": 1.5,
+            "spelling": "E4"
+          }
+        ]
+      },
+      {
+        "beat": 48.5,
+        "notes": [
+          {
+            "midi": 69,
+            "beats": 0.5,
+            "spelling": "A4"
+          }
+        ]
+      },
+      {
+        "beat": 49,
+        "notes": [
+          {
+            "midi": 72,
+            "beats": 0.5,
+            "spelling": "C5"
+          }
+        ]
+      },
+      {
+        "beat": 49.5,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 0.5,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 50.5,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 0.5,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 51.5,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 0.5,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 52,
+        "notes": [
+          {
+            "midi": 76,
+            "beats": 0.5,
+            "spelling": "E5"
+          }
+        ]
+      },
+      {
+        "beat": 52.5,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 0.5,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 53.5,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 0.5,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 54.5,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 0.5,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 55,
+        "notes": [
+          {
+            "midi": 79,
+            "beats": 0.5,
+            "spelling": "G5"
+          }
+        ]
+      },
+      {
+        "beat": 55.5,
+        "notes": [
+          {
+            "midi": 76,
+            "beats": 0.5,
+            "spelling": "E5"
+          }
+        ]
+      },
+      {
+        "beat": 56.5,
+        "notes": [
+          {
+            "midi": 76,
+            "beats": 0.5,
+            "spelling": "E5"
+          }
+        ]
+      },
+      {
+        "beat": 57.5,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 0.5,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 58,
+        "notes": [
+          {
+            "midi": 72,
+            "beats": 0.5,
+            "spelling": "C5"
+          }
+        ]
+      },
+      {
+        "beat": 58.5,
+        "notes": [
+          {
+            "midi": 72,
+            "beats": 0.5,
+            "spelling": "C5"
+          }
+        ]
+      },
+      {
+        "beat": 59,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 1,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 60.5,
+        "notes": [
+          {
+            "midi": 69,
+            "beats": 0.5,
+            "spelling": "A4"
+          }
+        ]
+      },
+      {
+        "beat": 61,
+        "notes": [
+          {
+            "midi": 72,
+            "beats": 0.5,
+            "spelling": "C5"
+          }
+        ]
+      },
+      {
+        "beat": 61.5,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 0.5,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 62.5,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 0.5,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 63.5,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 0.5,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 64,
+        "notes": [
+          {
+            "midi": 76,
+            "beats": 0.5,
+            "spelling": "E5"
+          }
+        ]
+      },
+      {
+        "beat": 64.5,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 0.5,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 65.5,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 0.5,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 66.5,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 0.5,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 67,
+        "notes": [
+          {
+            "midi": 79,
+            "beats": 0.5,
+            "spelling": "G5"
+          }
+        ]
+      },
+      {
+        "beat": 67.5,
+        "notes": [
+          {
+            "midi": 76,
+            "beats": 0.5,
+            "spelling": "E5"
+          }
+        ]
+      },
+      {
+        "beat": 68.5,
+        "notes": [
+          {
+            "midi": 76,
+            "beats": 0.5,
+            "spelling": "E5"
+          }
+        ]
+      },
+      {
+        "beat": 69.5,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 0.5,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 70,
+        "notes": [
+          {
+            "midi": 72,
+            "beats": 0.5,
+            "spelling": "C5"
+          }
+        ]
+      },
+      {
+        "beat": 70.5,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 1.5,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 72.5,
+        "notes": [
+          {
+            "midi": 69,
+            "beats": 0.5,
+            "spelling": "A4"
+          }
+        ]
+      },
+      {
+        "beat": 73,
+        "notes": [
+          {
+            "midi": 72,
+            "beats": 0.5,
+            "spelling": "C5"
+          }
+        ]
+      },
+      {
+        "beat": 73.5,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 0.5,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 74.5,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 0.5,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 75.5,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 0.5,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 76,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 0.5,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 76.5,
+        "notes": [
+          {
+            "midi": 79,
+            "beats": 0.5,
+            "spelling": "G5"
+          }
+        ]
+      },
+      {
+        "beat": 77.5,
+        "notes": [
+          {
+            "midi": 79,
+            "beats": 0.5,
+            "spelling": "G5"
+          }
+        ]
+      },
+      {
+        "beat": 78.5,
+        "notes": [
+          {
+            "midi": 79,
+            "beats": 0.5,
+            "spelling": "G5"
+          }
+        ]
+      },
+      {
+        "beat": 79,
+        "notes": [
+          {
+            "midi": 81,
+            "beats": 0.5,
+            "spelling": "A5"
+          }
+        ]
+      },
+      {
+        "beat": 79.5,
+        "notes": [
+          {
+            "midi": 82,
+            "beats": 0.5,
+            "spelling": "Bb5"
+          }
+        ]
+      },
+      {
+        "beat": 80.5,
+        "notes": [
+          {
+            "midi": 82,
+            "beats": 0.5,
+            "spelling": "Bb5"
+          }
+        ]
+      },
+      {
+        "beat": 81.5,
+        "notes": [
+          {
+            "midi": 81,
+            "beats": 0.5,
+            "spelling": "A5"
+          }
+        ]
+      },
+      {
+        "beat": 82,
+        "notes": [
+          {
+            "midi": 79,
+            "beats": 0.5,
+            "spelling": "G5"
+          }
+        ]
+      },
+      {
+        "beat": 82.5,
+        "notes": [
+          {
+            "midi": 81,
+            "beats": 0.5,
+            "spelling": "A5"
+          }
+        ]
+      },
+      {
+        "beat": 83,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 1,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 84.5,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 0.5,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 85,
+        "notes": [
+          {
+            "midi": 76,
+            "beats": 0.5,
+            "spelling": "E5"
+          }
+        ]
+      },
+      {
+        "beat": 85.5,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 0.5,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 86.5,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 0.5,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 87.5,
+        "notes": [
+          {
+            "midi": 79,
+            "beats": 0.5,
+            "spelling": "G5"
+          }
+        ]
+      },
+      {
+        "beat": 88.5,
+        "notes": [
+          {
+            "midi": 81,
+            "beats": 0.5,
+            "spelling": "A5"
+          }
+        ]
+      },
+      {
+        "beat": 89,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 1,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 90.5,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 0.5,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 91,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 0.5,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 91.5,
+        "notes": [
+          {
+            "midi": 76,
+            "beats": 1,
+            "spelling": "E5"
+          }
+        ]
+      },
+      {
+        "beat": 92.5,
+        "notes": [
+          {
+            "midi": 76,
+            "beats": 1,
+            "spelling": "E5"
+          }
+        ]
+      },
+      {
+        "beat": 93.5,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 0.5,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 94,
+        "notes": [
+          {
+            "midi": 73,
+            "beats": 0.5,
+            "spelling": "C#5"
+          }
+        ]
+      },
+      {
+        "beat": 94.5,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 1,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 95.5,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 0.5,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 96,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 0.5,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 96.5,
+        "notes": [
+          {
+            "midi": 76,
+            "beats": 1,
+            "spelling": "E5"
+          }
+        ]
+      },
+      {
+        "beat": 97.5,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 1,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 98.5,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 0.5,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 99,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 0.5,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 99.5,
+        "notes": [
+          {
+            "midi": 79,
+            "beats": 1,
+            "spelling": "G5"
+          }
+        ]
+      },
+      {
+        "beat": 100.5,
+        "notes": [
+          {
+            "midi": 81,
+            "beats": 1,
+            "spelling": "A5"
+          }
+        ]
+      },
+      {
+        "beat": 102.5,
+        "notes": [
+          {
+            "midi": 81,
+            "beats": 0.3333333333333333,
+            "spelling": "A5"
+          }
+        ]
+      },
+      {
+        "beat": 102.83333333333333,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 0.3333333333333333,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 103.16666666666667,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 0.3333333333333333,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 103.5,
+        "notes": [
+          {
+            "midi": 82,
+            "beats": 1,
+            "spelling": "Bb5"
+          }
+        ]
+      },
+      {
+        "beat": 105.5,
+        "notes": [
+          {
+            "midi": 82,
+            "beats": 0.3333333333333333,
+            "spelling": "Bb5"
+          }
+        ]
+      },
+      {
+        "beat": 105.83333333333333,
+        "notes": [
+          {
+            "midi": 79,
+            "beats": 0.3333333333333333,
+            "spelling": "G5"
+          }
+        ]
+      },
+      {
+        "beat": 106.16666666666667,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 0.3333333333333333,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 106.5,
+        "notes": [
+          {
+            "midi": 81,
+            "beats": 1,
+            "spelling": "A5"
+          }
+        ]
+      },
+      {
+        "beat": 107.5,
+        "notes": [
+          {
+            "midi": 81,
+            "beats": 0.3333333333333333,
+            "spelling": "A5"
+          }
+        ]
+      },
+      {
+        "beat": 107.83333333333333,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 0.3333333333333333,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 108.16666666666667,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 0.3333333333333333,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 109.5,
+        "notes": [
+          {
+            "midi": 61,
+            "beats": 2,
+            "spelling": "C#4"
+          },
+          {
+            "midi": 64,
+            "beats": 2,
+            "spelling": "E4"
+          }
+        ]
+      },
+      {
+        "beat": 111.5,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 0.5,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 112,
+        "notes": [
+          {
+            "midi": 76,
+            "beats": 0.5,
+            "spelling": "E5"
+          }
+        ]
+      },
+      {
+        "beat": 112.5,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 2,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 114.5,
+        "notes": [
+          {
+            "midi": 79,
+            "beats": 0.5,
+            "spelling": "G5"
+          }
+        ]
+      },
+      {
+        "beat": 115,
+        "notes": [
+          {
+            "midi": 81,
+            "beats": 0.5,
+            "spelling": "A5"
+          }
+        ]
+      },
+      {
+        "beat": 115.5,
+        "notes": [
+          {
+            "midi": 79,
+            "beats": 1,
+            "spelling": "G5"
+          }
+        ]
+      },
+      {
+        "beat": 116.5,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 1,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 117.5,
+        "notes": [
+          {
+            "midi": 76,
+            "beats": 1,
+            "spelling": "E5"
+          }
+        ]
+      },
+      {
+        "beat": 118.5,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 1,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 119.5,
+        "notes": [
+          {
+            "midi": 79,
+            "beats": 1,
+            "spelling": "G5"
+          }
+        ]
+      },
+      {
+        "beat": 120.5,
+        "notes": [
+          {
+            "midi": 81,
+            "beats": 1,
+            "spelling": "A5"
+          }
+        ]
+      },
+      {
+        "beat": 121.5,
+        "notes": [
+          {
+            "midi": 79,
+            "beats": 2,
+            "spelling": "G5"
+          }
+        ]
+      },
+      {
+        "beat": 123.5,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 0.5,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 124,
+        "notes": [
+          {
+            "midi": 79,
+            "beats": 0.5,
+            "spelling": "G5"
+          }
+        ]
+      },
+      {
+        "beat": 124.5,
+        "notes": [
+          {
+            "midi": 81,
+            "beats": 2,
+            "spelling": "A5"
+          }
+        ]
+      },
+      {
+        "beat": 126.5,
+        "notes": [
+          {
+            "midi": 79,
+            "beats": 0.5,
+            "spelling": "G5"
+          }
+        ]
+      },
+      {
+        "beat": 127,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 0.5,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 127.5,
+        "notes": [
+          {
+            "midi": 76,
+            "beats": 1,
+            "spelling": "E5"
+          }
+        ]
+      },
+      {
+        "beat": 128.5,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 1,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 129.5,
+        "notes": [
+          {
+            "midi": 76,
+            "beats": 1,
+            "spelling": "E5"
+          }
+        ]
+      },
+      {
+        "beat": 130.5,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 1.5,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 132,
+        "notes": [
+          {
+            "midi": 76,
+            "beats": 0.5,
+            "spelling": "E5"
+          }
+        ]
+      },
+      {
+        "beat": 132.5,
+        "notes": [
+          {
+            "midi": 72,
+            "beats": 1,
+            "spelling": "C5"
+          }
+        ]
+      },
+      {
+        "beat": 133.5,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 2,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 135.5,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 0.5,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 136,
+        "notes": [
+          {
+            "midi": 76,
+            "beats": 0.5,
+            "spelling": "E5"
+          }
+        ]
+      },
+      {
+        "beat": 136.5,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 1.5,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 138,
+        "notes": [
+          {
+            "midi": 76,
+            "beats": 0.5,
+            "spelling": "E5"
+          }
+        ]
+      },
+      {
+        "beat": 138.5,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 1,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 139.5,
+        "notes": [
+          {
+            "midi": 79,
+            "beats": 1,
+            "spelling": "G5"
+          }
+        ]
+      },
+      {
+        "beat": 140.5,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 1,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 141.5,
+        "notes": [
+          {
+            "midi": 79,
+            "beats": 1,
+            "spelling": "G5"
+          }
+        ]
+      },
+      {
+        "beat": 142.5,
+        "notes": [
+          {
+            "midi": 81,
+            "beats": 1,
+            "spelling": "A5"
+          }
+        ]
+      },
+      {
+        "beat": 143.5,
+        "notes": [
+          {
+            "midi": 79,
+            "beats": 1,
+            "spelling": "G5"
+          }
+        ]
+      },
+      {
+        "beat": 144.5,
+        "notes": [
+          {
+            "midi": 84,
+            "beats": 1,
+            "spelling": "C6"
+          }
+        ]
+      },
+      {
+        "beat": 145.5,
+        "notes": [
+          {
+            "midi": 86,
+            "beats": 1,
+            "spelling": "D6"
+          }
+        ]
+      },
+      {
+        "beat": 146.5,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 1,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 147.5,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 0.5,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 148,
+        "notes": [
+          {
+            "midi": 76,
+            "beats": 0.5,
+            "spelling": "E5"
+          }
+        ]
+      },
+      {
+        "beat": 148.5,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 1,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 149.5,
+        "notes": [
+          {
+            "midi": 79,
+            "beats": 1,
+            "spelling": "G5"
+          }
+        ]
+      },
+      {
+        "beat": 150.5,
+        "notes": [
+          {
+            "midi": 81,
+            "beats": 1,
+            "spelling": "A5"
+          }
+        ]
+      },
+      {
+        "beat": 151.5,
+        "notes": [
+          {
+            "midi": 82,
+            "beats": 1,
+            "spelling": "Bb5"
+          }
+        ]
+      },
+      {
+        "beat": 152.5,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 1,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 153.5,
+        "notes": [
+          {
+            "midi": 79,
+            "beats": 1,
+            "spelling": "G5"
+          }
+        ]
+      },
+      {
+        "beat": 154.5,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 2,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 156.5,
+        "notes": [
+          {
+            "midi": 79,
+            "beats": 0.5,
+            "spelling": "G5"
+          }
+        ]
+      },
+      {
+        "beat": 157,
+        "notes": [
+          {
+            "midi": 76,
+            "beats": 0.5,
+            "spelling": "E5"
+          }
+        ]
+      },
+      {
+        "beat": 157.5,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 2,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 159.5,
+        "notes": [
+          {
+            "midi": 76,
+            "beats": 0.5,
+            "spelling": "E5"
+          }
+        ]
+      },
+      {
+        "beat": 160,
+        "notes": [
+          {
+            "midi": 73,
+            "beats": 0.5,
+            "spelling": "C#5"
+          }
+        ]
+      },
+      {
+        "beat": 160.5,
+        "notes": [
+          {
+            "midi": 81,
+            "beats": 1,
+            "spelling": "A5"
+          }
+        ]
+      },
+      {
+        "beat": 162.5,
+        "notes": [
+          {
+            "midi": 81,
+            "beats": 0.3333333333333333,
+            "spelling": "A5"
+          }
+        ]
+      },
+      {
+        "beat": 162.83333333333334,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 0.3333333333333333,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 163.16666666666666,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 0.3333333333333333,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 163.5,
+        "notes": [
+          {
+            "midi": 82,
+            "beats": 1,
+            "spelling": "Bb5"
+          }
+        ]
+      },
+      {
+        "beat": 165.5,
+        "notes": [
+          {
+            "midi": 82,
+            "beats": 0.3333333333333333,
+            "spelling": "Bb5"
+          }
+        ]
+      },
+      {
+        "beat": 165.83333333333334,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 0.3333333333333333,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 166.16666666666666,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 0.3333333333333333,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 166.5,
+        "notes": [
+          {
+            "midi": 81,
+            "beats": 1,
+            "spelling": "A5"
+          }
+        ]
+      },
+      {
+        "beat": 167.5,
+        "notes": [
+          {
+            "midi": 81,
+            "beats": 1,
+            "spelling": "A5"
+          }
+        ]
+      },
+      {
+        "beat": 168.5,
+        "notes": [
+          {
+            "midi": 81,
+            "beats": 1,
+            "spelling": "A5"
+          }
+        ]
+      },
+      {
+        "beat": 169.5,
+        "notes": [
+          {
+            "midi": 81,
+            "beats": 0.5,
+            "spelling": "A5"
+          }
+        ]
+      },
+      {
+        "beat": 170,
+        "notes": [
+          {
+            "midi": 79,
+            "beats": 0.5,
+            "spelling": "G5"
+          }
+        ]
+      },
+      {
+        "beat": 170.5,
+        "notes": [
+          {
+            "midi": 79,
+            "beats": 0.3333333333333333,
+            "spelling": "G5"
+          }
+        ]
+      },
+      {
+        "beat": 170.83333333333334,
+        "notes": [
+          {
+            "midi": 76,
+            "beats": 0.3333333333333333,
+            "spelling": "E5"
+          }
+        ]
+      },
+      {
+        "beat": 171.16666666666666,
+        "notes": [
+          {
+            "midi": 72,
+            "beats": 0.3333333333333333,
+            "spelling": "C5"
+          }
+        ]
+      },
+      {
+        "beat": 172.5,
+        "notes": [
+          {
+            "midi": 79,
+            "beats": 1,
+            "spelling": "G5"
+          }
+        ]
+      },
+      {
+        "beat": 174.5,
+        "notes": [
+          {
+            "midi": 79,
+            "beats": 0.3333333333333333,
+            "spelling": "G5"
+          }
+        ]
+      },
+      {
+        "beat": 174.83333333333334,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 0.3333333333333333,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 175.16666666666666,
+        "notes": [
+          {
+            "midi": 70,
+            "beats": 0.3333333333333333,
+            "spelling": "Bb4"
+          }
+        ]
+      },
+      {
+        "beat": 175.5,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 1,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 177.5,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 0.3333333333333333,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 177.83333333333334,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 0.3333333333333333,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 178.16666666666666,
+        "notes": [
+          {
+            "midi": 69,
+            "beats": 0.3333333333333333,
+            "spelling": "A4"
+          }
+        ]
+      },
+      {
+        "beat": 178.5,
+        "notes": [
+          {
+            "midi": 76,
+            "beats": 1,
+            "spelling": "E5"
+          }
+        ]
+      },
+      {
+        "beat": 179.5,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 1.5,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 181,
+        "notes": [
+          {
+            "midi": 76,
+            "beats": 0.5,
+            "spelling": "E5"
+          }
+        ]
+      },
+      {
+        "beat": 181.5,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 1,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 183.5,
+        "notes": [
+          {
+            "midi": 81,
+            "beats": 0.3333333333333333,
+            "spelling": "A5"
+          }
+        ]
+      },
+      {
+        "beat": 183.83333333333334,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 0.3333333333333333,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 184.16666666666666,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 0.3333333333333333,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 184.5,
+        "notes": [
+          {
+            "midi": 81,
+            "beats": 1,
+            "spelling": "A5"
+          }
+        ]
+      },
+      {
+        "beat": 186.5,
+        "notes": [
+          {
+            "midi": 81,
+            "beats": 0.3333333333333333,
+            "spelling": "A5"
+          }
+        ]
+      },
+      {
+        "beat": 186.83333333333334,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 0.3333333333333333,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 187.16666666666666,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 0.3333333333333333,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 187.5,
+        "notes": [
+          {
+            "midi": 82,
+            "beats": 1,
+            "spelling": "Bb5"
+          }
+        ]
+      },
+      {
+        "beat": 189.5,
+        "notes": [
+          {
+            "midi": 82,
+            "beats": 0.3333333333333333,
+            "spelling": "Bb5"
+          }
+        ]
+      },
+      {
+        "beat": 189.83333333333334,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 0.3333333333333333,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 190.16666666666666,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 0.3333333333333333,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 190.5,
+        "notes": [
+          {
+            "midi": 81,
+            "beats": 1,
+            "spelling": "A5"
+          }
+        ]
+      },
+      {
+        "beat": 191.5,
+        "notes": [
+          {
+            "midi": 81,
+            "beats": 1,
+            "spelling": "A5"
+          }
+        ]
+      },
+      {
+        "beat": 192.5,
+        "notes": [
+          {
+            "midi": 81,
+            "beats": 1,
+            "spelling": "A5"
+          }
+        ]
+      },
+      {
+        "beat": 193.5,
+        "notes": [
+          {
+            "midi": 81,
+            "beats": 0.5,
+            "spelling": "A5"
+          }
+        ]
+      },
+      {
+        "beat": 194,
+        "notes": [
+          {
+            "midi": 79,
+            "beats": 0.5,
+            "spelling": "G5"
+          }
+        ]
+      },
+      {
+        "beat": 194.5,
+        "notes": [
+          {
+            "midi": 79,
+            "beats": 0.3333333333333333,
+            "spelling": "G5"
+          }
+        ]
+      },
+      {
+        "beat": 194.83333333333334,
+        "notes": [
+          {
+            "midi": 76,
+            "beats": 0.3333333333333333,
+            "spelling": "E5"
+          }
+        ]
+      },
+      {
+        "beat": 195.16666666666666,
+        "notes": [
+          {
+            "midi": 72,
+            "beats": 0.3333333333333333,
+            "spelling": "C5"
+          }
+        ]
+      },
+      {
+        "beat": 196.5,
+        "notes": [
+          {
+            "midi": 79,
+            "beats": 1,
+            "spelling": "G5"
+          }
+        ]
+      },
+      {
+        "beat": 198.5,
+        "notes": [
+          {
+            "midi": 79,
+            "beats": 0.3333333333333333,
+            "spelling": "G5"
+          }
+        ]
+      },
+      {
+        "beat": 198.83333333333334,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 0.3333333333333333,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 199.16666666666666,
+        "notes": [
+          {
+            "midi": 70,
+            "beats": 0.3333333333333333,
+            "spelling": "Bb4"
+          }
+        ]
+      },
+      {
+        "beat": 199.5,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 1,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 201.5,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 0.3333333333333333,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 201.83333333333334,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 0.3333333333333333,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 202.16666666666666,
+        "notes": [
+          {
+            "midi": 69,
+            "beats": 0.3333333333333333,
+            "spelling": "A4"
+          }
+        ]
+      },
+      {
+        "beat": 202.5,
+        "notes": [
+          {
+            "midi": 76,
+            "beats": 1,
+            "spelling": "E5"
+          }
+        ]
+      },
+      {
+        "beat": 203.5,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 1.5,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 205,
+        "notes": [
+          {
+            "midi": 76,
+            "beats": 0.5,
+            "spelling": "E5"
+          }
+        ]
+      },
+      {
+        "beat": 205.5,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 1,
+            "spelling": "F5"
+          },
+          {
+            "midi": 81,
+            "beats": 1,
+            "spelling": "A5"
+          }
+        ]
+      },
+      {
+        "beat": 206.5,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 2,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 208.5,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 1,
+            "spelling": "F5"
+          },
+          {
+            "midi": 82,
+            "beats": 1,
+            "spelling": "Bb5"
+          }
+        ]
+      },
+      {
+        "beat": 209.5,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 2,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 211.5,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 1,
+            "spelling": "F5"
+          },
+          {
+            "midi": 81,
+            "beats": 1,
+            "spelling": "A5"
+          }
+        ]
+      },
+      {
+        "beat": 212.5,
+        "notes": [
+          {
+            "midi": 69,
+            "beats": 1,
+            "spelling": "A4"
+          }
+        ]
+      },
+      {
+        "beat": 213.5,
+        "notes": [
+          {
+            "midi": 81,
+            "beats": 1,
+            "spelling": "A5"
+          }
+        ]
+      },
+      {
+        "beat": 214.5,
+        "notes": [
+          {
+            "midi": 81,
+            "beats": 0.5,
+            "spelling": "A5"
+          }
+        ]
+      },
+      {
+        "beat": 215,
+        "notes": [
+          {
+            "midi": 79,
+            "beats": 0.5,
+            "spelling": "G5"
+          }
+        ]
+      },
+      {
+        "beat": 215.5,
+        "notes": [
+          {
+            "midi": 67,
+            "beats": 2,
+            "spelling": "G4"
+          }
+        ]
+      },
+      {
+        "beat": 217.5,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 1,
+            "spelling": "D5"
+          },
+          {
+            "midi": 79,
+            "beats": 1,
+            "spelling": "G5"
+          }
+        ]
+      },
+      {
+        "beat": 218.5,
+        "notes": [
+          {
+            "midi": 67,
+            "beats": 2,
+            "spelling": "G4"
+          }
+        ]
+      },
+      {
+        "beat": 220.5,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 1,
+            "spelling": "D5"
+          },
+          {
+            "midi": 77,
+            "beats": 1,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 221.5,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 2,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 223.5,
+        "notes": [
+          {
+            "midi": 76,
+            "beats": 1,
+            "spelling": "E5"
+          }
+        ]
+      },
+      {
+        "beat": 224.5,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 1.5,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 226,
+        "notes": [
+          {
+            "midi": 76,
+            "beats": 0.5,
+            "spelling": "E5"
+          }
+        ]
+      },
+      {
+        "beat": 226.5,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 1,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 227.5,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 2,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 229.5,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 1,
+            "spelling": "F5"
+          },
+          {
+            "midi": 81,
+            "beats": 1,
+            "spelling": "A5"
+          }
+        ]
+      },
+      {
+        "beat": 230.5,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 2,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 232.5,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 1,
+            "spelling": "F5"
+          },
+          {
+            "midi": 82,
+            "beats": 1,
+            "spelling": "Bb5"
+          }
+        ]
+      },
+      {
+        "beat": 233.5,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 2,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 235.5,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 1,
+            "spelling": "F5"
+          },
+          {
+            "midi": 81,
+            "beats": 1,
+            "spelling": "A5"
+          }
+        ]
+      },
+      {
+        "beat": 236.5,
+        "notes": [
+          {
+            "midi": 81,
+            "beats": 1,
+            "spelling": "A5"
+          }
+        ]
+      },
+      {
+        "beat": 237.5,
+        "notes": [
+          {
+            "midi": 84,
+            "beats": 1,
+            "spelling": "C6"
+          }
+        ]
+      },
+      {
+        "beat": 238.5,
+        "notes": [
+          {
+            "midi": 81,
+            "beats": 0.5,
+            "spelling": "A5"
+          }
+        ]
+      },
+      {
+        "beat": 239,
+        "notes": [
+          {
+            "midi": 79,
+            "beats": 0.5,
+            "spelling": "G5"
+          }
+        ]
+      },
+      {
+        "beat": 239.5,
+        "notes": [
+          {
+            "midi": 67,
+            "beats": 2,
+            "spelling": "G4"
+          }
+        ]
+      },
+      {
+        "beat": 241.5,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 1,
+            "spelling": "D5"
+          },
+          {
+            "midi": 79,
+            "beats": 1,
+            "spelling": "G5"
+          }
+        ]
+      },
+      {
+        "beat": 242.5,
+        "notes": [
+          {
+            "midi": 67,
+            "beats": 2,
+            "spelling": "G4"
+          }
+        ]
+      },
+      {
+        "beat": 244.5,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 1,
+            "spelling": "D5"
+          },
+          {
+            "midi": 77,
+            "beats": 1,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 245.5,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 2,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 247.5,
+        "notes": [
+          {
+            "midi": 76,
+            "beats": 1,
+            "spelling": "E5"
+          }
+        ]
+      },
+      {
+        "beat": 248.5,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 1.5,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 250,
+        "notes": [
+          {
+            "midi": 76,
+            "beats": 0.5,
+            "spelling": "E5"
+          }
+        ]
+      },
+      {
+        "beat": 250.5,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 1,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 251.5,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 2,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 253.5,
+        "notes": [
+          {
+            "midi": 57,
+            "beats": 1,
+            "spelling": "A3"
+          }
+        ]
+      },
+      {
+        "beat": 254.5,
+        "notes": [
+          {
+            "midi": 59,
+            "beats": 1,
+            "spelling": "B3"
+          }
+        ]
+      },
+      {
+        "beat": 255.5,
+        "notes": [
+          {
+            "midi": 61,
+            "beats": 1,
+            "spelling": "C#4"
+          }
+        ]
+      },
+      {
+        "beat": 256.5,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 1,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 257.5,
+        "notes": [
+          {
+            "midi": 64,
+            "beats": 1,
+            "spelling": "E4"
+          }
+        ]
+      },
+      {
+        "beat": 258.5,
+        "notes": [
+          {
+            "midi": 65,
+            "beats": 1,
+            "spelling": "F4"
+          }
+        ]
+      },
+      {
+        "beat": 259.5,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 1,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 260.5,
+        "notes": [
+          {
+            "midi": 64,
+            "beats": 1,
+            "spelling": "E4"
+          }
+        ]
+      },
+      {
+        "beat": 261.5,
+        "notes": [
+          {
+            "midi": 65,
+            "beats": 1,
+            "spelling": "F4"
+          }
+        ]
+      },
+      {
+        "beat": 262.5,
+        "notes": [
+          {
+            "midi": 66,
+            "beats": 1,
+            "spelling": "F#4"
+          }
+        ]
+      },
+      {
+        "beat": 263.5,
+        "notes": [
+          {
+            "midi": 67,
+            "beats": 1,
+            "spelling": "G4"
+          }
+        ]
+      },
+      {
+        "beat": 264.5,
+        "notes": [
+          {
+            "midi": 68,
+            "beats": 1,
+            "spelling": "G#4"
+          }
+        ]
+      },
+      {
+        "beat": 265.5,
+        "notes": [
+          {
+            "midi": 69,
+            "beats": 1,
+            "spelling": "A4"
+          }
+        ]
+      },
+      {
+        "beat": 267.5,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 0.3333333333333333,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 267.8333333333333,
+        "notes": [
+          {
+            "midi": 65,
+            "beats": 0.3333333333333333,
+            "spelling": "F4"
+          }
+        ]
+      },
+      {
+        "beat": 268.1666666666667,
+        "notes": [
+          {
+            "midi": 69,
+            "beats": 0.3333333333333333,
+            "spelling": "A4"
+          }
+        ]
+      },
+      {
+        "beat": 268.5,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 0.3333333333333333,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 268.8333333333333,
+        "notes": [
+          {
+            "midi": 65,
+            "beats": 0.3333333333333333,
+            "spelling": "F4"
+          }
+        ]
+      },
+      {
+        "beat": 269.1666666666667,
+        "notes": [
+          {
+            "midi": 69,
+            "beats": 0.3333333333333333,
+            "spelling": "A4"
+          }
+        ]
+      },
+      {
+        "beat": 269.5,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 0.3333333333333333,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 269.8333333333333,
+        "notes": [
+          {
+            "midi": 77,
+            "beats": 0.3333333333333333,
+            "spelling": "F5"
+          }
+        ]
+      },
+      {
+        "beat": 270.1666666666667,
+        "notes": [
+          {
+            "midi": 81,
+            "beats": 0.3333333333333333,
+            "spelling": "A5"
+          }
+        ]
+      },
+      {
+        "beat": 270.5,
+        "notes": [
+          {
+            "midi": 86,
+            "beats": 1,
+            "spelling": "D6"
+          }
+        ]
+      },
+      {
+        "beat": 271.5,
+        "notes": [
+          {
+            "midi": 62,
+            "beats": 2,
+            "spelling": "D4"
+          }
+        ]
+      },
+      {
+        "beat": 273.5,
+        "notes": [
+          {
+            "midi": 74,
+            "beats": 2,
+            "spelling": "D5"
+          }
+        ]
+      },
+      {
+        "beat": 275.5,
+        "notes": [
+          {
+            "midi": 86,
+            "beats": 2,
+            "spelling": "D6"
+          }
+        ]
+      },
+      {
+        "beat": 277.5,
+        "notes": [
+          {
+            "midi": 86,
+            "beats": 3,
+            "spelling": "D6"
+          },
+          {
+            "midi": 89,
+            "beats": 3,
+            "spelling": "F6"
+          },
+          {
+            "midi": 93,
+            "beats": 3,
+            "spelling": "A6"
+          }
+        ]
+      }
+    ]
+  },
+  "source": {
+    "description": "用户提供三页钢琴谱；逐小节人工转录",
+    "measures": [
+      {
+        "number": 0,
+        "page": 1,
+        "beat": 0,
+        "beats": 1.5
+      },
+      {
+        "number": 1,
+        "page": 1,
+        "beat": 1.5,
+        "beats": 6
+      },
+      {
+        "number": 2,
+        "page": 1,
+        "beat": 7.5,
+        "beats": 6
+      },
+      {
+        "number": 3,
+        "page": 1,
+        "beat": 13.5,
+        "beats": 6
+      },
+      {
+        "number": 4,
+        "page": 1,
+        "beat": 19.5,
+        "beats": 6
+      },
+      {
+        "number": 5,
+        "page": 1,
+        "beat": 25.5,
+        "beats": 6
+      },
+      {
+        "number": 6,
+        "page": 1,
+        "beat": 31.5,
+        "beats": 6
+      },
+      {
+        "number": 7,
+        "page": 1,
+        "beat": 37.5,
+        "beats": 6
+      },
+      {
+        "number": 8,
+        "page": 1,
+        "beat": 43.5,
+        "beats": 6
+      },
+      {
+        "number": 9,
+        "page": 1,
+        "beat": 49.5,
+        "beats": 6
+      },
+      {
+        "number": 10,
+        "page": 1,
+        "beat": 55.5,
+        "beats": 6
+      },
+      {
+        "number": 11,
+        "page": 1,
+        "beat": 61.5,
+        "beats": 6
+      },
+      {
+        "number": 12,
+        "page": 1,
+        "beat": 67.5,
+        "beats": 6
+      },
+      {
+        "number": 13,
+        "page": 1,
+        "beat": 73.5,
+        "beats": 6
+      },
+      {
+        "number": 14,
+        "page": 1,
+        "beat": 79.5,
+        "beats": 6
+      },
+      {
+        "number": 15,
+        "page": 1,
+        "beat": 85.5,
+        "beats": 6
+      },
+      {
+        "number": 16,
+        "page": 1,
+        "beat": 91.5,
+        "beats": 3
+      },
+      {
+        "number": 17,
+        "page": 2,
+        "beat": 94.5,
+        "beats": 3
+      },
+      {
+        "number": 18,
+        "page": 2,
+        "beat": 97.5,
+        "beats": 3
+      },
+      {
+        "number": 19,
+        "page": 2,
+        "beat": 100.5,
+        "beats": 3
+      },
+      {
+        "number": 20,
+        "page": 2,
+        "beat": 103.5,
+        "beats": 3
+      },
+      {
+        "number": 21,
+        "page": 2,
+        "beat": 106.5,
+        "beats": 3
+      },
+      {
+        "number": 22,
+        "page": 2,
+        "beat": 109.5,
+        "beats": 3
+      },
+      {
+        "number": 23,
+        "page": 2,
+        "beat": 112.5,
+        "beats": 3
+      },
+      {
+        "number": 24,
+        "page": 2,
+        "beat": 115.5,
+        "beats": 3
+      },
+      {
+        "number": 25,
+        "page": 2,
+        "beat": 118.5,
+        "beats": 3
+      },
+      {
+        "number": 26,
+        "page": 2,
+        "beat": 121.5,
+        "beats": 3
+      },
+      {
+        "number": 27,
+        "page": 2,
+        "beat": 124.5,
+        "beats": 3
+      },
+      {
+        "number": 28,
+        "page": 2,
+        "beat": 127.5,
+        "beats": 3
+      },
+      {
+        "number": 29,
+        "page": 2,
+        "beat": 130.5,
+        "beats": 3
+      },
+      {
+        "number": 30,
+        "page": 2,
+        "beat": 133.5,
+        "beats": 3
+      },
+      {
+        "number": 31,
+        "page": 2,
+        "beat": 136.5,
+        "beats": 3
+      },
+      {
+        "number": 32,
+        "page": 2,
+        "beat": 139.5,
+        "beats": 3
+      },
+      {
+        "number": 33,
+        "page": 2,
+        "beat": 142.5,
+        "beats": 3
+      },
+      {
+        "number": 34,
+        "page": 2,
+        "beat": 145.5,
+        "beats": 3
+      },
+      {
+        "number": 35,
+        "page": 2,
+        "beat": 148.5,
+        "beats": 3
+      },
+      {
+        "number": 36,
+        "page": 2,
+        "beat": 151.5,
+        "beats": 3
+      },
+      {
+        "number": 37,
+        "page": 2,
+        "beat": 154.5,
+        "beats": 3
+      },
+      {
+        "number": 38,
+        "page": 2,
+        "beat": 157.5,
+        "beats": 3
+      },
+      {
+        "number": 39,
+        "page": 2,
+        "beat": 160.5,
+        "beats": 3
+      },
+      {
+        "number": 40,
+        "page": 2,
+        "beat": 163.5,
+        "beats": 3
+      },
+      {
+        "number": 41,
+        "page": 2,
+        "beat": 166.5,
+        "beats": 3
+      },
+      {
+        "number": 42,
+        "page": 2,
+        "beat": 169.5,
+        "beats": 3
+      },
+      {
+        "number": 43,
+        "page": 2,
+        "beat": 172.5,
+        "beats": 3
+      },
+      {
+        "number": 44,
+        "page": 2,
+        "beat": 175.5,
+        "beats": 3
+      },
+      {
+        "number": 45,
+        "page": 2,
+        "beat": 178.5,
+        "beats": 3
+      },
+      {
+        "number": 46,
+        "page": 2,
+        "beat": 181.5,
+        "beats": 3
+      },
+      {
+        "number": 47,
+        "page": 2,
+        "beat": 184.5,
+        "beats": 3
+      },
+      {
+        "number": 48,
+        "page": 2,
+        "beat": 187.5,
+        "beats": 3
+      },
+      {
+        "number": 49,
+        "page": 2,
+        "beat": 190.5,
+        "beats": 3
+      },
+      {
+        "number": 50,
+        "page": 2,
+        "beat": 193.5,
+        "beats": 3
+      },
+      {
+        "number": 51,
+        "page": 3,
+        "beat": 196.5,
+        "beats": 3
+      },
+      {
+        "number": 52,
+        "page": 3,
+        "beat": 199.5,
+        "beats": 3
+      },
+      {
+        "number": 53,
+        "page": 3,
+        "beat": 202.5,
+        "beats": 3
+      },
+      {
+        "number": 54,
+        "page": 3,
+        "beat": 205.5,
+        "beats": 3
+      },
+      {
+        "number": 55,
+        "page": 3,
+        "beat": 208.5,
+        "beats": 3
+      },
+      {
+        "number": 56,
+        "page": 3,
+        "beat": 211.5,
+        "beats": 3
+      },
+      {
+        "number": 57,
+        "page": 3,
+        "beat": 214.5,
+        "beats": 3
+      },
+      {
+        "number": 58,
+        "page": 3,
+        "beat": 217.5,
+        "beats": 3
+      },
+      {
+        "number": 59,
+        "page": 3,
+        "beat": 220.5,
+        "beats": 3
+      },
+      {
+        "number": 60,
+        "page": 3,
+        "beat": 223.5,
+        "beats": 3
+      },
+      {
+        "number": 61,
+        "page": 3,
+        "beat": 226.5,
+        "beats": 3
+      },
+      {
+        "number": 62,
+        "page": 3,
+        "beat": 229.5,
+        "beats": 3
+      },
+      {
+        "number": 63,
+        "page": 3,
+        "beat": 232.5,
+        "beats": 3
+      },
+      {
+        "number": 64,
+        "page": 3,
+        "beat": 235.5,
+        "beats": 3
+      },
+      {
+        "number": 65,
+        "page": 3,
+        "beat": 238.5,
+        "beats": 3
+      },
+      {
+        "number": 66,
+        "page": 3,
+        "beat": 241.5,
+        "beats": 3
+      },
+      {
+        "number": 67,
+        "page": 3,
+        "beat": 244.5,
+        "beats": 3
+      },
+      {
+        "number": 68,
+        "page": 3,
+        "beat": 247.5,
+        "beats": 3
+      },
+      {
+        "number": 69,
+        "page": 3,
+        "beat": 250.5,
+        "beats": 3
+      },
+      {
+        "number": 70,
+        "page": 3,
+        "beat": 253.5,
+        "beats": 3
+      },
+      {
+        "number": 71,
+        "page": 3,
+        "beat": 256.5,
+        "beats": 3
+      },
+      {
+        "number": 72,
+        "page": 3,
+        "beat": 259.5,
+        "beats": 3
+      },
+      {
+        "number": 73,
+        "page": 3,
+        "beat": 262.5,
+        "beats": 3
+      },
+      {
+        "number": 74,
+        "page": 3,
+        "beat": 265.5,
+        "beats": 3
+      },
+      {
+        "number": 75,
+        "page": 3,
+        "beat": 268.5,
+        "beats": 3
+      },
+      {
+        "number": 76,
+        "page": 3,
+        "beat": 271.5,
+        "beats": 3
+      },
+      {
+        "number": 77,
+        "page": 3,
+        "beat": 274.5,
+        "beats": 3
+      },
+      {
+        "number": 78,
+        "page": 3,
+        "beat": 277.5,
+        "beats": 3
+      },
+      {
+        "number": 79,
+        "page": 3,
+        "beat": 280.5,
+        "beats": 3
+      }
+    ]
+  }
+}

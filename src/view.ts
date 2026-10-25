@@ -1,6 +1,7 @@
 import type { Trigger } from './performance';
 import { PianoEffects } from './effects';
 import { HANDS, noteName, scoreEnd, type Hand, type Score } from './score/types';
+import {measureAt, measuresBetween} from './score/meter';
 
 const svgNS='http://www.w3.org/2000/svg';
 function el(name:string, attrs:Record<string,string|number>={}, text?:string): SVGElement {
@@ -29,6 +30,8 @@ export class ScoreView {
   private renderedWidth=-1;
   private renderedFrom=-1;
   private pending=false;
+  private meterNodes:SVGElement[]=[];
+  private shownMeter='';
   private motion=matchMedia('(prefers-reduced-motion: reduce)');
   private rests:Record<Hand,{beat:number;beats:number}[]>={left:[],right:[]};
   private notes:Record<Hand,Map<number,{node:SVGElement;state:number}>>={left:new Map(),right:new Map()};
@@ -69,9 +72,10 @@ export class ScoreView {
   }
   private commit() {
     if(!this.score)return;
-    const meter=this.score.timeSignature[0]*4/this.score.timeSignature[1];
-    const from=Math.max(0,Math.floor((this.focus-12)/meter)*meter);
+    const from=measureAt(this.score,Math.max(0,this.focus-12)).beat;
     if(from!==this.renderedFrom||this.width!==this.renderedWidth)this.render();
+    const signature=measureAt(this.score,this.focus).timeSignature,key=signature.join('/');
+    if(key!==this.shownMeter){this.meterNodes.forEach((n,i)=>n.textContent=String(signature[i%2]));this.shownMeter=key;}
     this.highlight();this.pending=false;
   }
   private highlight() {
@@ -93,8 +97,8 @@ export class ScoreView {
   }
   private render() {
     if(!this.score)return;
-    const score=this.score, meter=score.timeSignature[0]*4/score.timeSignature[1];
-    const from=Math.max(0,Math.floor((this.focus-12)/meter)*meter);
+    const score=this.score, current=measureAt(score,this.focus);
+    const from=measureAt(score,Math.max(0,this.focus-12)).beat;
     const width=this.width;
     this.renderedWidth=width;this.renderedFrom=from;
     this.notes={left:new Map(),right:new Map()};this.cursors={};
@@ -102,11 +106,13 @@ export class ScoreView {
     const defs=el('defs'),clip=el('clipPath',{id:this.clipId});clip.append(el('rect',{x:110,y:0,width:width-110,height:236}));defs.append(clip);svg.append(defs);
     for(const base of [54,154])for(let n=0;n<5;n++)svg.append(line(0,base+n*10,width,base+n*10,'#4b4357'));
     const clipped=el('g',{'clip-path':`url(#${this.clipId})`}),group=el('g',{transform:`translate(${-this.offset},0)`});clipped.append(group);svg.append(clipped);
-    for(let b=from;b<=Math.min(this.end+meter,from+48);b+=meter) {
+    for(const measure of measuresBetween(score,from,Math.min(this.end+current.beats,from+48))) {
+      const b=measure.beat,change=score.meterChanges?.some(c=>Math.abs(c.beat-b)<1e-7);
+      const label=measure.pickup?'弱起':String(measure.number).padStart(2,'0')+(change?` · ${measure.timeSignature.join('/')}`:'');
       const x=150+b*76;
       group.append(line(x,54,x,194,'#5b506b'));
-      if(b<this.end)group.append(el('text',{x:x+7,y:27,fill:'#a599b3','font-size':11,'font-family':'Consolas, monospace'},String(Math.floor(b/meter)+1).padStart(2,'0')));
-      const hit=el('rect',{x,y:30,width:meter*76,height:180,fill:'transparent',class:'measure-hit',tabindex:0,role:'button','aria-label':`定位到第 ${Math.floor(b/meter)+1} 小节`});
+      if(b<this.end)group.append(el('text',{x:x+7,y:27,fill:'#a599b3','font-size':11,'font-family':'Consolas, monospace'},label));
+      const hit=el('rect',{x,y:30,width:measure.beats*76,height:180,fill:'transparent',class:'measure-hit',tabindex:0,role:'button','data-beat':b,'aria-label':measure.pickup?'定位到弱起':`定位到第 ${measure.number} 小节`});
       hit.addEventListener('click',()=>this.onSeek?.(b));hit.addEventListener('keydown',e=>{const k=e as KeyboardEvent;if(k.key==='Enter'){k.preventDefault();this.onSeek?.(b);}});if(b<this.end)group.append(hit);
     }
     for(const hand of HANDS) {
@@ -160,7 +166,11 @@ export class ScoreView {
     for(const base of [54,154])for(let n=0;n<5;n++)svg.append(line(0,base+n*10,110,base+n*10,'#4b4357'));
     svg.append(el('text',{x:21,y:96,'font-size':65,'font-family':'"Segoe UI Symbol", serif',fill:'#d5cede'},'𝄞'));
     svg.append(el('text',{x:25,y:191,'font-size':51,'font-family':'"Segoe UI Symbol", serif',fill:'#d5cede'},'𝄢'));
-    for(const y of [72,172]) {svg.append(el('text',{x:84,y,'font-size':20,'font-family':'Georgia',fill:'#d5cede'},String(score.timeSignature[0])));svg.append(el('text',{x:84,y:y+20,'font-size':20,'font-family':'Georgia',fill:'#d5cede'},String(score.timeSignature[1])));}
+    this.meterNodes=[];this.shownMeter=current.timeSignature.join('/');
+    for(const y of [72,172])for(let i=0;i<2;i++){
+      const node=el('text',{x:84,y:y+i*20,'font-size':20,'font-family':'Georgia',fill:'#d5cede','data-meter':i},String(current.timeSignature[i]));
+      this.meterNodes.push(node);svg.append(node);
+    }
     this.host.replaceChildren(svg);this.group=group;
   }
 }

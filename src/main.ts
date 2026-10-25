@@ -5,7 +5,8 @@ import { demoScore, waltzScore } from './score/demo';
 import { importBytes } from './score/import';
 import { duetScore, sourceProgress } from './score/duet';
 import { beatScore } from './score/beat';
-import { HANDS, noteName, scoreEnd, validateScore, type Hand, type Score } from './score/types';
+import { HANDS, noteName, validateScore, type Hand, type Score } from './score/types';
+import {measureAt, measureCount, pulseAtOrAfter} from './score/meter';
 import { KeyboardView, ScoreView } from './view';
 
 const icons:Record<string,string>={
@@ -84,7 +85,7 @@ const laneFocus:Record<Hand,number>={left:0,right:0};
 const laneCutoff:Record<Hand,number>={left:0,right:0};
 const laneMeasures:Record<Hand,number>={left:0,right:0};
 let active=false,demo=false,metronome=false,beatShown=0,startToken=0,importToken=0;
-let demoOrigin=0,demoBase=0,metroNext=0,metroCount=0,toastTimer:ReturnType<typeof setTimeout>;
+let demoOrigin=0,demoBase=0,metroNext=0,metroBeat=0,toastTimer:ReturnType<typeof setTimeout>;
 let uiDirty=true,totalGroups=0,totalMeasures=0;
 const audio=new PianoAudio(), scoreView=new ScoreView($('score')), keyboard=new KeyboardView($('piano'),$<HTMLCanvasElement>('note-effects'));
 const laneViews:Record<Hand,ScoreView>={left:new ScoreView($('left-score')),right:new ScoreView($('right-score'))};
@@ -101,11 +102,13 @@ function renderUI() {
     $(`${hand}-count`).textContent=`${indices[hand]} / ${score.hands[hand].length}${byBeat?' 拍':''}`;
     const next=engine.next(hand);
     $(`${hand}-notes`).textContent=next?(next.notes.map(n=>noteName(n.midi)).join(' · ')||(next.following?.length?'拍内音符':'休止 / 延音')):(accompaniment.pendingFor(hand)?'伴奏中':'完成');
-    if(duet){const source=laneScores[hand],meter=source.timeSignature[0]*4/source.timeSignature[1];$(`${hand}-position`).textContent=`${source.timeSignature.join('/')} · ${Math.floor(laneFocus[hand]/meter)+1} / ${laneMeasures[hand]}`;}
+    if(duet){const source=laneScores[hand],measure=measureAt(source,laneFocus[hand]);$(`${hand}-position`).textContent=`${measure.timeSignature.join('/')} · ${measure.pickup?'弱起':measure.number} / ${laneMeasures[hand]}`;}
   }
   $('progress-label').textContent=`${done} / ${total}${byBeat?' 拍':''}`;$('progress').style.width=`${total?done/total*100:0}%`;
-  const meter=score.timeSignature[0]*4/score.timeSignature[1];
-  $('measure').textContent=`${String(Math.floor(beatShown/meter)+1).padStart(2,'0')} / ${String(totalMeasures).padStart(2,'0')}`;
+  const source=duet?laneScores.left:library.get($<HTMLSelectElement>('library').value)!;
+  const measure=measureAt(source,beatShown);
+  $('measure').textContent=`${measure.pickup?'弱起':String(measure.number).padStart(2,'0')} / ${String(totalMeasures).padStart(2,'0')}`;
+  $('meter').textContent=measure.timeSignature.join(' / ');
   const complete=engine.complete&&!accompaniment.pending;
   const label=active?'暂停':complete?'再弹一次':'开始演奏';
   if($('toggle').dataset.state!==label){$('toggle').innerHTML=`${icon(active?'pause':'play')}<span>${label}</span>`;$('toggle').dataset.state=label;}
@@ -125,8 +128,13 @@ async function start(asDemo=false) {
   if(token!==startToken)return;
   active=true;demo=asDemo;engine.clearInput();
   const next=HANDS.map(h=>engine.next(h)?.beat??Infinity);
-  demoBase=Math.min(...next);demoOrigin=performance.now();metroNext=demoOrigin;metroCount=Math.round(demoBase/(4/score.timeSignature[1]));update();
+  demoBase=Math.min(...next);demoOrigin=performance.now();resetMetronome(duet?(engine.next('left')?.beat??laneFocus.left):demoBase,demoOrigin);update();
 }
+function resetMetronome(beat:number,now=performance.now()) {
+  const pulse=pulseAtOrAfter(score,beat);
+  metroBeat=pulse.beat;metroNext=now+(pulse.beat-beat)*60000/bpm;
+}
+function metronomePosition() {return demo?demoBase+(performance.now()-demoOrigin)*bpm/60000:duet?laneFocus.left:beatShown;}
 function syncScores(immediate=false) {
   if(duet)for(const hand of HANDS)laneViews[hand].update(sourceProgress(laneScores[hand],laneCutoff[hand]),laneFocus[hand],immediate);
   else if(byBeat){const source=library.get($<HTMLSelectElement>('library').value)!;scoreView.update({left:sourceProgress(source,laneCutoff.left).left,right:sourceProgress(source,laneCutoff.right).right},beatShown,immediate);}
@@ -144,18 +152,19 @@ function setScore(next:Score,changedHand?:Hand) {
   if(changedHand){engine.seekHand(other,otherBeat);bpm=previousBpm;laneFocus[changedHand]=laneCutoff[changedHand]=0;}
   else laneFocus.left=laneFocus.right=laneCutoff.left=laneCutoff.right=0;
   totalGroups=score.hands.left.length+score.hands.right.length;
-  totalMeasures=Math.ceil(scoreEnd(duet?laneScores.left:library.get($<HTMLSelectElement>('library').value)!)/(score.timeSignature[0]*4/score.timeSignature[1]));
+  totalMeasures=measureCount(duet?laneScores.left:library.get($<HTMLSelectElement>('library').value)!);
   $('title').textContent=score.title;$('composer').textContent=duet?'':score.composer||'自定义曲谱';
   $<HTMLInputElement>('bpm').value=String(Math.round(bpm));$('meter').textContent=score.timeSignature.join(' / ');
   $('score').hidden=duet;$('duet-scores').hidden=!duet;$('library').hidden=duet;$('import').hidden=duet;$('export-hand').hidden=!duet;$('meter').hidden=duet;$('measure').parentElement!.hidden=duet;
   $('source-status').textContent=duet?'左红 · 右蓝':'双手节奏谱';
   $('drop').textContent=duet?'松开以导入左手曲谱':'松开以导入曲谱';
-  if(duet)for(const hand of HANDS){const source=laneScores[hand];laneMeasures[hand]=Math.ceil(scoreEnd(source)/(source.timeSignature[0]*4/source.timeSignature[1]));laneViews[hand].load(source);}else scoreView.load(library.get($<HTMLSelectElement>('library').value)!);
+  if(duet)for(const hand of HANDS){const source=laneScores[hand];laneMeasures[hand]=measureCount(source);laneViews[hand].load(source);}else scoreView.load(library.get($<HTMLSelectElement>('library').value)!);
   syncScores(true);update();
 }
 function emit(trigger:Trigger,tempo:number) {
   audio.play(trigger.event.notes,tempo);keyboard.emit(trigger,tempo);
   beatShown=trigger.event.beat;laneFocus[trigger.hand]=beatShown;laneCutoff[trigger.hand]=beatShown+0.0002;syncScores();update();
+  if(!demo&&(!duet||trigger.hand==='left')&&measureAt(score,beatShown).timeSignature.join('/')!==measureAt(score,metroBeat).timeSignature.join('/'))resetMetronome(beatShown);
 }
 function flushFollowing(now=performance.now()) {for(const item of accompaniment.takeDue(now))emit(item.trigger,item.bpm);}
 function finishIfComplete() {if(engine.complete&&!accompaniment.pending){active=false;demo=false;engine.clearInput();update();}}
@@ -187,13 +196,13 @@ async function readFile(file:File,target:Hand|'single'=duet?'left':'single') {
 $('toggle').addEventListener('click',()=>{if(active)pause();else void start();});
 $('reset').addEventListener('click',()=>{pause();engine.reset();beatShown=0;laneFocus.left=laneFocus.right=laneCutoff.left=laneCutoff.right=0;syncScores(true);update();});
 $('demo').addEventListener('click',()=>{if(demo)pause();else void start(true);});
-$('metro').addEventListener('click',()=>{metronome=!metronome;$('metro').setAttribute('aria-pressed',String(metronome));metroNext=performance.now();metroCount=0;});
+$('metro').addEventListener('click',()=>{metronome=!metronome;$('metro').setAttribute('aria-pressed',String(metronome));resetMetronome(metronomePosition());});
 $('volume').addEventListener('input',()=>audio.setVolume(Number($<HTMLInputElement>('volume').value)/100));
 $('bpm').addEventListener('change',()=>{
   const input=$<HTMLInputElement>('bpm'),value=Number(input.value);
   if(!Number.isFinite(value)||value<20||value>300){input.value=String(Math.round(bpm));toast('速度应为 20–300 BPM');return;}
   if(demo){demoBase+=(performance.now()-demoOrigin)*bpm/60000;demoOrigin=performance.now();}
-  bpm=value;metroNext=performance.now();
+  bpm=value;resetMetronome(metronomePosition());
 });
 function chooseFile(target:Hand|'single'){importToken++;importTarget=target;pause();$<HTMLInputElement>('file').click();}
 $('import').addEventListener('click',()=>chooseFile('single'));
@@ -252,8 +261,9 @@ function frame(now:number) {
   }
   if(active){flushFollowing(now);finishIfComplete();}
   if(active&&metronome&&now>=metroNext) {
-    audio.click(metroCount%score.timeSignature[0]===0);metroCount++;
-    metroNext+=60000/bpm*4/score.timeSignature[1];if(now-metroNext>100)metroNext=now+60000/bpm*4/score.timeSignature[1];
+    const pulse=pulseAtOrAfter(score,metroBeat);audio.click(pulse.accent);
+    metroNext+=(pulse.nextBeat-pulse.beat)*60000/bpm;metroBeat=pulse.nextBeat;
+    if(now-metroNext>100)resetMetronome(metroBeat+(now-metroNext)*bpm/60000,now);
   }
   if(uiDirty)renderUI();
   keyboard.frame(now);if(duet)for(const hand of HANDS)laneViews[hand].frame();else scoreView.frame();frameId=requestAnimationFrame(frame);

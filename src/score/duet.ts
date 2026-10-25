@@ -42,9 +42,11 @@ export function duetScore(left: Score, right: Score, byBeat = false): Performanc
   return {
     version: 1, title: '双曲独奏', composer: '', bpm: left.bpm,
     timeSignature: [...left.timeSignature],
+    ...(left.pickupBeats!==undefined?{pickupBeats:left.pickupBeats}:{}),
+    ...(left.meterChanges?{meterChanges:left.meterChanges.map(c=>({beat:c.beat,timeSignature:[...c.timeSignature]}))}:{}),
     hands: {
-      left: byBeat ? beatGestures(mergedOnsets(left), 4 / left.timeSignature[1]) : fullSong(left),
-      right: byBeat ? beatGestures(mergedOnsets(right), 4 / right.timeSignature[1]) : fullSong(right),
+      left: byBeat ? beatGestures(mergedOnsets(left), left) : fullSong(left),
+      right: byBeat ? beatGestures(mergedOnsets(right), right) : fullSong(right),
     },
   };
 }
