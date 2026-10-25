@@ -9,6 +9,9 @@ export type Score = {
   timeSignature: [number, number];
   hands: Record<Hand, ScoreEvent[]>;
 };
+// Internal playback plan; imported/exported scores retain the original event format.
+export type ScoreGesture = ScoreEvent & { following?: readonly ScoreEvent[] };
+export type PerformanceScore = Omit<Score, 'hands'> & { hands: Record<Hand, ScoreGesture[]> };
 export const HANDS: Hand[] = ['left', 'right'];
 
 export function validateScore(input: unknown): Score {

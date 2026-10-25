@@ -56,3 +56,13 @@ test('an idle score does not rewrite SVG transforms every animation frame',()=>w
   for(let i=0;i<60;i++)view.frame();
   assert.equal(writes(),before,'an unchanged score should stay idle');
 }));
+test('separate song views own distinct clipping paths and retain independent notation',()=>withDOM(host=>{
+  const other=new Node(),a=new ScoreView(host as unknown as HTMLElement),b=new ScoreView(other as unknown as HTMLElement);
+  a.load(demoScore());b.load(demoScore());
+  const clipA=walk(host).find(n=>n.attrs.has('id'))?.attrs.get('id');
+  const clipB=walk(other).find(n=>n.attrs.has('id'))?.attrs.get('id');
+  assert.notEqual(clipA,clipB);
+  a.update({left:2,right:4},4,true);
+  const next=walk(other).find(n=>n.attrs.get('data-hand')==='right'&&n.attrs.get('data-index')==='0');
+  assert.equal(next?.attrs.get('class'),'score-note next');
+}));

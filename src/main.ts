@@ -1,9 +1,10 @@
 import './style.css';
 import { PianoAudio } from './audio';
-import { Performance, handForCode, KEY_ROWS, type Trigger } from './performance';
+import { Performance, Accompaniment, handForCode, KEY_ROWS, type Trigger } from './performance';
 import { demoScore, waltzScore } from './score/demo';
 import { importBytes } from './score/import';
-import { HANDS, noteName, scoreEnd, validateScore, type Score } from './score/types';
+import { duetScore, sourceProgress } from './score/duet';
+import { HANDS, noteName, scoreEnd, validateScore, type Hand, type Score } from './score/types';
 import { KeyboardView, ScoreView } from './view';
 
 const icons:Record<string,string>={
@@ -23,12 +24,19 @@ $('app').innerHTML=`
   <section class="score-panel" aria-label="滚动琴谱">
     <div class="score-heading"><div class="piece-info"><h2 id="title" class="piece-title"></h2><span id="composer" class="composer"></span></div><div class="score-meta"><span id="source-status">双手节奏谱</span><span id="meter">4/4</span><span>小节 <b id="measure">01 / 12</b></span></div></div>
     <div id="score" class="score-host"></div>
+    <div id="duet-scores" class="duet-scores" hidden>
+      ${HANDS.map(hand=>`<section class="song-lane ${hand}" aria-label="${hand==='left'?'左':'右'}手完整曲谱">
+        <div class="song-controls"><label for="${hand}-library">${hand==='left'?'左':'右'}手</label><select id="${hand}-library" aria-label="${hand==='left'?'左':'右'}手曲谱"><option value="star">小星星</option><option value="elise">致爱丽丝 · 主题练习</option></select><button id="${hand}-import">导入</button><span id="${hand}-position" class="song-position"></span></div>
+        <div id="${hand}-score" class="score-host"></div>
+      </section>`).join('')}
+    </div>
   </section>
   <div class="toolbar" role="group" aria-label="演奏控制">
     <div class="brand"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><h1>随奏</h1></div>
     <button id="toggle" class="primary">${icon('play')}<span>开始演奏</span></button>
     <button id="reset" class="icon-button" aria-label="从头开始" title="从头开始">${icon('reset')}</button>
     <div class="separator"></div>
+    <select id="mode" aria-label="演奏模式"><option value="split">双手分谱</option><option value="duet">双曲独奏</option></select>
     <select id="library" aria-label="选择曲谱"><option value="star">小星星</option><option value="elise">致爱丽丝 · 主题练习</option></select>
     <button id="import" class="file-button">${icon('upload')}<span>导入曲谱</span></button>
     <input id="file" class="sr-only" type="file" accept=".json,.xml,.musicxml,.mxl,.mid,.midi" aria-label="曲谱文件" />
@@ -39,7 +47,7 @@ $('app').innerHTML=`
     <div class="toolbar-end"><span id="sound-status" class="sound-status">钢琴</span><label class="control volume-control" for="volume">${icon('volume')}<span class="sr-only">音量</span><input id="volume" class="volume" type="range" min="0" max="100" value="70" /></label><button id="help" class="icon-button" aria-label="按键与转谱">${icon('help')}</button><button id="fullscreen" class="icon-button" aria-label="全屏演奏" title="全屏演奏">${icon('fullscreen')}</button></div>
   </div>
   <section class="stage" aria-label="发光音符演奏区">
-    <canvas id="note-effects" aria-label="蓝紫发光音符、金色触键电流与粒子" role="img"></canvas>
+    <canvas id="note-effects" aria-label="左手红色、右手蓝色音符，金色触键电流与粒子" role="img"></canvas>
     <div class="hand-state left"><span>左手 <b id="left-count"></b></span><small>6 / Y / G / B 及左侧<span id="left-notes" class="next-notes"></span></small></div>
     <div class="hand-state right"><span>右手 <b id="right-count"></b></span><small>7 / U / H / N 及右侧<span id="right-notes" class="next-notes"></span></small></div>
     <div id="guide" class="key-guide"><kbd>Space</kbd><span id="guide-text">开始 / 暂停</span></div>
@@ -51,11 +59,12 @@ $('app').innerHTML=`
 <div id="drop" class="drop-overlay" hidden>松开以导入曲谱</div>
 <dialog id="help-dialog" aria-labelledby="help-title">
   <div class="dialog-top"><h2 id="help-title">按键与转谱</h2><button id="close-help" class="icon-button" aria-label="关闭">${icon('close')}</button></div>
-  <h3>两只手，两个独立进度</h3><div id="key-map" class="keyboard-map" aria-label="左蓝右灰的键盘分区"></div>
-  <p>蓝色为左手，灰色为右手。同手 45 毫秒内的多键合并为一次；长按不连发。一次播放下一组音符或完整和弦。空格开始 / 暂停，Esc 暂停。</p>
+  <h3>两只手，两个独立进度</h3><div id="key-map" class="keyboard-map" aria-label="左红右蓝的键盘分区"></div>
+  <p>红色为左手，蓝色为右手。同手 45 毫秒内的多键合并为一次；长按不连发。一次播放下一组音符或完整和弦。空格开始 / 暂停，Esc 暂停。</p>
+  <h3>双曲独奏</h3><p>左右手可分别选曲或导入，也可选同一首。每次按键推进原谱右手主旋律的一组音符，左手伴奏按拍点跟随；没有右手声部时使用左手节奏。前奏随首次按键播放，尾奏自动接续。两首曲子共用速度控件，节拍器按左侧曲谱拍号。点击某侧小节只定位该侧；切换模式从头开始，拖入文件默认导入左手。</p>
   <h3>图片 / PDF 转谱</h3><p>把原谱发给聊天中的 Codex，使用本项目的转谱规范生成 .piano.json，再在这里导入。此应用支持 .piano.json、MusicXML、MXL、MIDI。</p>
-  <h3>音符光效</h3><p>蓝紫长条从对应琴键向上浮起，长音的光条更长；八分音符上浮比四分音符快一倍。调整 BPM 会改变音长、上浮速度、试听和节拍器。</p>
-  <div class="dialog-actions"><button id="export">导出当前曲谱</button><button id="format">下载转谱规范</button></div>
+  <h3>音符光效</h3><p>左红右蓝的长条从对应琴键向上浮起，长音的光条更长；八分音符上浮比四分音符快一倍。调整 BPM 会改变音长、上浮速度、试听和节拍器。</p>
+  <div class="dialog-actions"><select id="export-hand" aria-label="选择导出曲谱" hidden><option value="left">左手曲谱</option><option value="right">右手曲谱</option></select><button id="export">导出当前曲谱</button><button id="format">下载转谱规范</button></div>
 </dialog>`;
 
 for(const row of KEY_ROWS) {
@@ -65,11 +74,18 @@ for(const row of KEY_ROWS) {
 }
 
 let score:Score=demoScore(), engine=new Performance(score), bpm=score.bpm;
+const library=new Map<string,Score>([['star',score],['elise',waltzScore()]]);
+const laneScores:Record<Hand,Score>={left:score,right:library.get('elise')!};
+let duet=false,importTarget:Hand|'single'='single',importSequence=0;
+const laneFocus:Record<Hand,number>={left:0,right:0};
+const laneCutoff:Record<Hand,number>={left:0,right:0};
+const laneMeasures:Record<Hand,number>={left:0,right:0};
 let active=false,demo=false,metronome=false,beatShown=0,startToken=0,importToken=0;
 let demoOrigin=0,demoBase=0,metroNext=0,metroCount=0,toastTimer:ReturnType<typeof setTimeout>;
-let importedScore:Score|undefined;
 let uiDirty=true,totalGroups=0,totalMeasures=0;
 const audio=new PianoAudio(), scoreView=new ScoreView($('score')), keyboard=new KeyboardView($('piano'),$<HTMLCanvasElement>('note-effects'));
+const laneViews:Record<Hand,ScoreView>={left:new ScoreView($('left-score')),right:new ScoreView($('right-score'))};
+const accompaniment=new Accompaniment();
 audio.onStatus=s=>$('sound-status').textContent=s;
 
 function toast(text:string) {clearTimeout(toastTimer);$('toast').textContent=text;$('toast').hidden=false;toastTimer=setTimeout(()=>$('toast').hidden=true,6500);}
@@ -80,24 +96,26 @@ function renderUI() {
   const total=totalGroups,done=indices.left+indices.right;
   for(const hand of HANDS) {
     $(`${hand}-count`).textContent=`${indices[hand]} / ${score.hands[hand].length}`;
-    $(`${hand}-notes`).textContent=engine.next(hand)?.notes.map(n=>noteName(n.midi)).join(' · ')??'完成';
+    $(`${hand}-notes`).textContent=engine.next(hand)?.notes.map(n=>noteName(n.midi)).join(' · ')??(accompaniment.pendingFor(hand)?'伴奏中':'完成');
+    if(duet){const source=laneScores[hand],meter=source.timeSignature[0]*4/source.timeSignature[1];$(`${hand}-position`).textContent=`${source.timeSignature.join('/')} · ${Math.floor(laneFocus[hand]/meter)+1} / ${laneMeasures[hand]}`;}
   }
-  $('progress-label').textContent=`${done} / ${total}`;$('progress').style.width=`${done/total*100}%`;
+  $('progress-label').textContent=`${done} / ${total}`;$('progress').style.width=`${total?done/total*100:0}%`;
   const meter=score.timeSignature[0]*4/score.timeSignature[1];
   $('measure').textContent=`${String(Math.floor(beatShown/meter)+1).padStart(2,'0')} / ${String(totalMeasures).padStart(2,'0')}`;
-  const label=active?'暂停':engine.complete?'再弹一次':'开始演奏';
+  const complete=engine.complete&&!accompaniment.pending;
+  const label=active?'暂停':complete?'再弹一次':'开始演奏';
   if($('toggle').dataset.state!==label){$('toggle').innerHTML=`${icon(active?'pause':'play')}<span>${label}</span>`;$('toggle').dataset.state=label;}
   $('demo').setAttribute('aria-pressed',String(demo));$('demo').textContent=demo?'停止试听':'试听';
-  $('status').textContent=engine.complete?'演奏完成':demo?'正在试听':active?'跟随节奏演奏':done?'已暂停':'等待演奏';
+  $('status').textContent=complete?'演奏完成':demo?'正在试听':active?'跟随节奏演奏':done?'已暂停':'等待演奏';
   $('status-dot').classList.toggle('playing',active);$('guide').classList.toggle('hidden',active);
-  $('guide-text').textContent=engine.complete?'再弹一次':'开始 / 暂停';
+  $('guide-text').textContent=complete?'再弹一次':'开始 / 暂停';
 }
 function pause() {
-  startToken++;active=false;demo=false;engine.clearInput();audio.stop();keyboard.clear();update();
+  startToken++;active=false;demo=false;engine.clearInput();accompaniment.clear();audio.stop();keyboard.clear();update();
 }
 async function start(asDemo=false) {
   pause();
-  if(engine.complete){engine.reset();beatShown=0;scoreView.update(engine.snapshot(),0,true);}
+  if(engine.complete){engine.reset();beatShown=0;laneFocus.left=laneFocus.right=laneCutoff.left=laneCutoff.right=0;syncScores(true);}
   const token=++startToken;
   try {await audio.ready();}catch{if(token===startToken)toast('音频启动失败，请检查浏览器音频权限后重试');return;}
   if(token!==startToken)return;
@@ -105,39 +123,59 @@ async function start(asDemo=false) {
   const next=HANDS.map(h=>engine.next(h)?.beat??Infinity);
   demoBase=Math.min(...next);demoOrigin=performance.now();metroNext=demoOrigin;metroCount=Math.round(demoBase/(4/score.timeSignature[1]));update();
 }
-function setScore(next:Score) {
+function syncScores(immediate=false) {
+  if(duet)for(const hand of HANDS)laneViews[hand].update(sourceProgress(laneScores[hand],laneCutoff[hand]),laneFocus[hand],immediate);
+  else scoreView.update(engine.snapshot(),beatShown,immediate);
+}
+function setScore(next:Score,changedHand?:Hand) {
+  const other:Hand=changedHand==='left'?'right':'left';
+  const otherBeat=engine.next(other)?.beat??Infinity,previousBpm=bpm;
   pause();score=next;engine=new Performance(score);bpm=score.bpm;beatShown=0;
+  if(changedHand){engine.seekHand(other,otherBeat);bpm=previousBpm;laneFocus[changedHand]=laneCutoff[changedHand]=0;}
+  else laneFocus.left=laneFocus.right=laneCutoff.left=laneCutoff.right=0;
   totalGroups=score.hands.left.length+score.hands.right.length;
   totalMeasures=Math.ceil(scoreEnd(score)/(score.timeSignature[0]*4/score.timeSignature[1]));
-  $('title').textContent=score.title;$('composer').textContent=score.composer||'自定义曲谱';
+  $('title').textContent=score.title;$('composer').textContent=duet?'':score.composer||'自定义曲谱';
   $<HTMLInputElement>('bpm').value=String(Math.round(bpm));$('meter').textContent=score.timeSignature.join(' / ');
-  scoreView.load(score);update();
+  $('score').hidden=duet;$('duet-scores').hidden=!duet;$('library').hidden=duet;$('import').hidden=duet;$('export-hand').hidden=!duet;$('meter').hidden=duet;$('measure').parentElement!.hidden=duet;
+  $('source-status').textContent=duet?'左红 · 右蓝':'双手节奏谱';
+  $('drop').textContent=duet?'松开以导入左手曲谱':'松开以导入曲谱';
+  if(duet)for(const hand of HANDS){const source=laneScores[hand];laneMeasures[hand]=Math.ceil(scoreEnd(source)/(source.timeSignature[0]*4/source.timeSignature[1]));laneViews[hand].load(source);}else scoreView.load(score);
+  syncScores(true);update();
 }
-function play(trigger:Trigger|null) {
+function emit(trigger:Trigger,tempo:number) {
+  audio.play(trigger.event.notes,tempo);keyboard.emit(trigger,tempo);
+  beatShown=trigger.event.beat;laneFocus[trigger.hand]=beatShown;laneCutoff[trigger.hand]=beatShown+0.0002;syncScores();update();
+}
+function flushFollowing(now=performance.now()) {for(const item of accompaniment.takeDue(now))emit(item.trigger,item.bpm);}
+function finishIfComplete() {if(engine.complete&&!accompaniment.pending){active=false;demo=false;engine.clearInput();update();}}
+function play(trigger:Trigger|null,origin=performance.now()) {
   if(!trigger)return;
-  audio.play(trigger.event.notes,bpm);keyboard.emit(trigger,bpm);
-  beatShown=trigger.event.beat;scoreView.update(engine.snapshot(),beatShown);update();
-  if(engine.complete){active=false;demo=false;engine.clearInput();update();}
+  flushFollowing();for(const item of accompaniment.queue(trigger,bpm,origin))emit(item.trigger,item.bpm);emit(trigger,bpm);finishIfComplete();
 }
 
-async function readFile(file:File) {
+function addImported(next:Score) {
+  const key=`imported-${++importSequence}`;library.set(key,next);
+  for(const id of ['library','left-library','right-library']){const opt=document.createElement('option');opt.value=key;opt.textContent=next.title;$(id).append(opt);}
+  return key;
+}
+async function readFile(file:File,target:Hand|'single'=duet?'left':'single') {
   if(file.size>12*1024*1024){toast('曲谱文件最大 12 MB');return;}
   const token=++importToken;pause();$('source-status').textContent='正在读取';
   try {
     const result=importBytes(file.name,new Uint8Array(await file.arrayBuffer()));
     if(token!==importToken)return;
-    importedScore=result.score;setScore(result.score);
-    let opt=$<HTMLOptionElement>('imported-option');
-    if(!opt){opt=document.createElement('option');opt.value='imported';opt.id='imported-option';$('library').append(opt);}
-    opt.textContent=result.score.title;$<HTMLSelectElement>('library').value='imported';
+    const key=addImported(result.score);
+    if(target==='single'){$<HTMLSelectElement>('library').value=key;setScore(result.score);}
+    else{laneScores[target]=result.score;$<HTMLSelectElement>(`${target}-library`).value=key;setScore(duetScore(laneScores.left,laneScores.right),target);}
     try{localStorage.setItem('piano-score',JSON.stringify(result.score));}catch{toast('曲谱已导入；本机保存空间不足，刷新后需重新导入');}
-    $('source-status').textContent='已导入';
+    $('source-status').textContent=duet?'左红 · 右蓝':'已导入';
     if(result.warnings.length)toast(result.warnings.join('；'));
   }catch(error){if(token===importToken){$('source-status').textContent='导入失败';toast(error instanceof Error?error.message:'曲谱无法读取');}}
 }
 
 $('toggle').addEventListener('click',()=>{if(active)pause();else void start();});
-$('reset').addEventListener('click',()=>{pause();engine.reset();beatShown=0;scoreView.update(engine.snapshot(),0,true);update();});
+$('reset').addEventListener('click',()=>{pause();engine.reset();beatShown=0;laneFocus.left=laneFocus.right=laneCutoff.left=laneCutoff.right=0;syncScores(true);update();});
 $('demo').addEventListener('click',()=>{if(demo)pause();else void start(true);});
 $('metro').addEventListener('click',()=>{metronome=!metronome;$('metro').setAttribute('aria-pressed',String(metronome));metroNext=performance.now();metroCount=0;});
 $('volume').addEventListener('input',()=>audio.setVolume(Number($<HTMLInputElement>('volume').value)/100));
@@ -147,9 +185,16 @@ $('bpm').addEventListener('change',()=>{
   if(demo){demoBase+=(performance.now()-demoOrigin)*bpm/60000;demoOrigin=performance.now();}
   bpm=value;metroNext=performance.now();
 });
-$('import').addEventListener('click',()=>$<HTMLInputElement>('file').click());
-$('file').addEventListener('change',()=>{const input=$<HTMLInputElement>('file');if(input.files?.[0])void readFile(input.files[0]);input.value='';});
-$('library').addEventListener('change',()=>{importToken++;const v=$<HTMLSelectElement>('library').value;setScore(v==='elise'?waltzScore():v==='imported'&&importedScore?importedScore:demoScore());$('source-status').textContent=v==='imported'?'已导入':'双手节奏谱';});
+function chooseFile(target:Hand|'single'){importToken++;importTarget=target;pause();$<HTMLInputElement>('file').click();}
+$('import').addEventListener('click',()=>chooseFile('single'));
+$('file').addEventListener('change',()=>{const input=$<HTMLInputElement>('file');if(input.files?.[0])void readFile(input.files[0],importTarget);input.value='';});
+$('library').addEventListener('change',()=>{importToken++;setScore(library.get($<HTMLSelectElement>('library').value)!);});
+$('mode').addEventListener('change',()=>{importToken++;duet=$<HTMLSelectElement>('mode').value==='duet';setScore(duet?duetScore(laneScores.left,laneScores.right):library.get($<HTMLSelectElement>('library').value)!);});
+for(const hand of HANDS){
+  $(`${hand}-import`).addEventListener('click',()=>chooseFile(hand));
+  $(`${hand}-library`).addEventListener('change',()=>{importToken++;laneScores[hand]=library.get($<HTMLSelectElement>(`${hand}-library`).value)!;setScore(duetScore(laneScores.left,laneScores.right),hand);});
+  laneViews[hand].onSeek=beat=>{pause();engine.seekHand(hand,beat);laneFocus[hand]=laneCutoff[hand]=beat;syncScores(true);update();};
+}
 $('help').addEventListener('click',()=>{pause();$<HTMLDialogElement>('help-dialog').showModal();});
 $('close-help').addEventListener('click',()=>$<HTMLDialogElement>('help-dialog').close());
 $('fullscreen').addEventListener('click',async()=>{
@@ -160,7 +205,7 @@ document.addEventListener('fullscreenchange',()=>{
   const label=document.fullscreenElement?'退出全屏':'全屏演奏';$('fullscreen').setAttribute('aria-label',label);$('fullscreen').title=label;
 });
 function download(data:string,name:string) {const url=URL.createObjectURL(new Blob([data],{type:'application/json;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
-$('export').addEventListener('click',()=>download(JSON.stringify({...score,bpm},null,2),`${score.title.replace(/[<>:"/\\|?*]/g,'_')}.piano.json`));
+$('export').addEventListener('click',()=>{const source=duet?laneScores[$<HTMLSelectElement>('export-hand').value as Hand]:score;download(JSON.stringify({...source,bpm},null,2),`${source.title.replace(/[<>:"/\\|?*]/g,'_')}.piano.json`);});
 $('format').addEventListener('click',()=>{const a=document.createElement('a');a.href='/转谱规范.txt';a.download='随奏-Codex转谱规范.txt';a.click();});
 keyboard.onPress=hand=>{if(active&&!demo)play(engine.trigger(hand));};
 scoreView.onSeek=beat=>{pause();engine.seek(beat);beatShown=beat;scoreView.update(engine.snapshot(),beat,true);update();};
@@ -175,7 +220,7 @@ window.addEventListener('keydown',e=>{
   if(handForCode(e.code)) {e.preventDefault();if(active&&!demo)play(engine.press(e.code,e.repeat));}
 });
 window.addEventListener('keyup',e=>engine.release(e.code));
-window.addEventListener('resize',()=>scoreView.resize());
+window.addEventListener('resize',()=>{scoreView.resize();for(const hand of HANDS)laneViews[hand].resize();});
 window.addEventListener('blur',()=>{if(active)pause();else engine.clearInput();});
 document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();});
 let dragDepth=0;
@@ -186,24 +231,27 @@ window.addEventListener('drop',e=>{e.preventDefault();dragDepth=0;$('drop').hidd
 
 let frameId=0;
 function frame(now:number) {
+  if(active)flushFollowing(now);
   if(active&&demo) {
     const beat=demoBase+(now-demoOrigin)*bpm/60000;
     for(const hand of HANDS) {
       let next=engine.next(hand),safety=0;
-      while(active&&next&&next.beat<=beat+0.002&&safety++<128) {play(engine.advance(hand));next=engine.next(hand);}
+      while(active&&next&&next.beat<=beat+0.002&&safety++<128) {play(engine.advance(hand),demoOrigin+(next.beat-demoBase)*60000/bpm);next=engine.next(hand);}
     }
   }
+  if(active){flushFollowing(now);finishIfComplete();}
   if(active&&metronome&&now>=metroNext) {
     audio.click(metroCount%score.timeSignature[0]===0);metroCount++;
     metroNext+=60000/bpm*4/score.timeSignature[1];if(now-metroNext>100)metroNext=now+60000/bpm*4/score.timeSignature[1];
   }
   if(uiDirty)renderUI();
-  keyboard.frame(now);scoreView.frame();frameId=requestAnimationFrame(frame);
+  keyboard.frame(now);if(duet)for(const hand of HANDS)laneViews[hand].frame();else scoreView.frame();frameId=requestAnimationFrame(frame);
 }
 setScore(score);
+$<HTMLSelectElement>('right-library').value='elise';
 try {
   const saved=localStorage.getItem('piano-score');
-  if(saved){importedScore=validateScore(JSON.parse(saved));const opt=document.createElement('option');opt.id='imported-option';opt.value='imported';opt.textContent=importedScore.title;$('library').append(opt);}
+  if(saved)addImported(validateScore(JSON.parse(saved)));
 }catch{localStorage.removeItem('piano-score');}
 frameId=requestAnimationFrame(frame);
 window.addEventListener('pagehide',()=>{pause();cancelAnimationFrame(frameId);});

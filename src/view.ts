@@ -33,8 +33,10 @@ export class ScoreView {
   private rests:Record<Hand,{beat:number;beats:number}[]>={left:[],right:[]};
   private notes:Record<Hand,Map<number,{node:SVGElement;state:number}>>={left:new Map(),right:new Map()};
   private cursors:Partial<Record<Hand,{node:SVGElement;position:string}>>={};
+  private readonly clipId:string;
+  private static sequence=0;
   onSeek?:(beat:number)=>void;
-  constructor(private host:HTMLElement) {}
+  constructor(private host:HTMLElement) {this.clipId=`score-clip-${ScoreView.sequence++}`;}
   load(score:Score) {
     this.score=score;this.end=scoreEnd(score);this.focus=0;this.offset=0;this.target=0;this.indices={left:0,right:0};
     this.renderedFrom=-1;this.renderedWidth=-1;
@@ -97,9 +99,9 @@ export class ScoreView {
     this.renderedWidth=width;this.renderedFrom=from;
     this.notes={left:new Map(),right:new Map()};this.cursors={};
     const svg=el('svg',{viewBox:`0 0 ${width} 236`,role:'group','aria-label':'左右手五线谱，可点击小节定位'}) as SVGSVGElement;
-    const defs=el('defs'),clip=el('clipPath',{id:'score-clip'});clip.append(el('rect',{x:110,y:0,width:width-110,height:236}));defs.append(clip);svg.append(defs);
+    const defs=el('defs'),clip=el('clipPath',{id:this.clipId});clip.append(el('rect',{x:110,y:0,width:width-110,height:236}));defs.append(clip);svg.append(defs);
     for(const base of [54,154])for(let n=0;n<5;n++)svg.append(line(0,base+n*10,width,base+n*10,'#4b4357'));
-    const clipped=el('g',{'clip-path':'url(#score-clip)'}),group=el('g',{transform:`translate(${-this.offset},0)`});clipped.append(group);svg.append(clipped);
+    const clipped=el('g',{'clip-path':`url(#${this.clipId})`}),group=el('g',{transform:`translate(${-this.offset},0)`});clipped.append(group);svg.append(clipped);
     for(let b=from;b<=Math.min(this.end+meter,from+48);b+=meter) {
       const x=150+b*76;
       group.append(line(x,54,x,194,'#5b506b'));

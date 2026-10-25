@@ -61,12 +61,12 @@ export class PianoEffects {
   private noteSprite(note:LightNote,height:number) {
     const width=Math.max(7,Math.min(30,this.width/52*.84)),pad=22;
     return this.sprite(`note:${note.hand}:${height}`,width+pad*2,height+pad*2,ctx=>{
-      ctx.shadowColor=note.hand==='left'?'#a985ff':'#efb4ff';ctx.shadowBlur=18;
+      ctx.shadowColor=note.hand==='left'?'#ff4055':'#268aff';ctx.shadowBlur=18;
       const fill=ctx.createLinearGradient(pad,pad,pad+width,pad+height);
-      fill.addColorStop(0,'#fff7ff');fill.addColorStop(.2,note.hand==='left'?'#c4b9ff':'#f3c0f7');
-      fill.addColorStop(.7,note.hand==='left'?'#7864f5':'#ba73e8');fill.addColorStop(1,'#e6c7ff');
+      fill.addColorStop(0,note.hand==='left'?'#ffb3bb':'#a9d4ff');fill.addColorStop(.2,note.hand==='left'?'#ff6678':'#54adff');
+      fill.addColorStop(.7,note.hand==='left'?'#e51d39':'#1768e5');fill.addColorStop(1,note.hand==='left'?'#ff8695':'#7cbcff');
       ctx.fillStyle=fill;ctx.beginPath();ctx.roundRect(pad,pad,width,height,Math.min(5,width*.27));ctx.fill();
-      ctx.shadowBlur=0;ctx.strokeStyle='#fce9ff';ctx.lineWidth=.9;ctx.stroke();
+      ctx.shadowBlur=0;ctx.strokeStyle=note.hand==='left'?'#ffc6cc':'#c3e3ff';ctx.lineWidth=.9;ctx.stroke();
       ctx.globalAlpha=.65;ctx.fillStyle='#fff';ctx.beginPath();ctx.roundRect(pad+1.5,pad+2,Math.max(1,width*.13),height-4,2);ctx.fill();
     });
   }
